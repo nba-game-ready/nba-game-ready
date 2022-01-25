@@ -110,4 +110,8 @@ Kieran - Team Swish
     
 Yunis Khamis
 
+ User_Interface
+Shikeya & Claire
+=======
 RecyclerView branch added
+
