@@ -99,6 +99,19 @@ MVVM Architecture: Model-View-ViewModel
 | `Claire` | Recyclerview UI |
 | `Shikeya` | Main UI |
 | `Sabur` | Networking - Images |
-    
 
+
+Shikeya - Team Swish.
+Raven test
+
+Claire-Team Swish
+    
+Kieran - Team Swish
+    
+Yunis Khamis
+
+ User_Interface
 Shikeya & Claire
+=======
+RecyclerView branch added
+
