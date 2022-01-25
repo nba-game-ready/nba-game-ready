@@ -43,6 +43,7 @@ Displays all live and upcoming NBA games, including live scores and television n
 * User has an option to create an account and profile to have quick access to favorites, saved games, and setup notifications
 * User has accessibility options
 * User can change text to multiple different languages
+* Push notifications affiliate marketing
 
 ### 2. Screen Archetypes
 
