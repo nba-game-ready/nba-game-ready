@@ -104,12 +104,10 @@ MVVM Architecture: Model-View-ViewModel
 Shikeya - Team Swish.
 Raven test
 
-
-    
-
-
 Claire-Team Swish
     
 Kieran - Team Swish
     
 Yunis Khamis
+
+RecyclerView branch added
