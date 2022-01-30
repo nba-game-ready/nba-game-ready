@@ -28,7 +28,7 @@ class TodayAdapter : ListAdapter<Today, TodayAdapter.TodayViewHolder>(DiffCallba
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: Game, newItem: Game): Boolean {
+            override fun areContentsTheSame(oldItem: Today, newItem: Today): Boolean {
                 return oldItem == newItem
             }
 
@@ -41,8 +41,8 @@ class TodayAdapter : ListAdapter<Today, TodayAdapter.TodayViewHolder>(DiffCallba
             val homeTeamImage = itemView.findViewById<ImageView>(R.id.home_image)
             val awayTeamImage = itemView.findViewById<ImageView>(R.id.away_image)
 
-            Glide.with(itemView.context).load(games.homeUrl).centerCrop().into(homeTeamImage)
-            Glide.with(itemView.context).load(games.awayUrl).centerCrop().into(awayTeamImage)
+            Glide.with(itemView.context).load(today.homeUrl).centerCrop().into(homeTeamImage)
+            Glide.with(itemView.context).load(today.awayUrl).centerCrop().into(awayTeamImage)
         }
     }
 }
