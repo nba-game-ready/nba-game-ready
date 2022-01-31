@@ -7,10 +7,5 @@
     <string name="yesterday">Yesterday</string>
     <string name="game_ready">Game Ready</string>
     <string name="nba">NBA</string>
-    <string name="nba">NBA</string>
-    <string name="game_ready">Game Ready</string>
-    <string name="yesterday">Yesterday</string>
-    <string name="today">Today</string>
-    <string name="tomorrow">Tomorrow</string>
-    <string name="tweet">Tweet</string>
+
 </resources>
