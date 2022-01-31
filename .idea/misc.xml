@@ -3,14 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.4973958333333333" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.24189463019250254" />
-        <entry key="app/src/main/res/layout/fragment_today.xml" value="0.4166666666666667" />
-        <entry key="app/src/main/res/layout/fragment_tomorrow.xml" value="0.4166666666666667" />
-        <entry key="app/src/main/res/layout/fragment_yesterday.xml" value="0.4166666666666667" />
-        <entry key="app/src/main/res/layout/todays_list.xml" value="0.4973958333333333" />
-        <entry key="app/src/main/res/layout/tomorrows_list.xml" value="0.4973958333333333" />
-        <entry key="app/src/main/res/layout/yesterdays_list.xml" value="0.4973958333333333" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/drawable/gradient.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/drawable/ic_ball_icons_foreground.xml" value="0.25625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/drawable/ic_launcher_ball_foreground.xml" value="0.25625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.25625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/drawable/splash_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/activity_main.xml" value="0.3" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/activity_splash.xml" value="0.3625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/teams.xml" value="0.3625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/todays_fragment.xml" value="0.3625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/todays_list.xml" value="0.3625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/tomorrows_fragment.xml" value="0.3625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/tomorrows_list.xml" value="0.3625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/yesterdays_fragment.xml" value="0.3625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/yesterdays_list.xml" value="0.3625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/mipmap-anydpi-v26/ic_ball_icon2.xml" value="0.21875" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/mipmap-anydpi-v26/ic_ball_icon2_round.xml" value="0.25625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/mipmap-anydpi-v26/ic_ball_icons.xml" value="0.25625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/mipmap-anydpi-v26/ic_launcher1.xml" value="0.25625" />
+        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.37864583333333335" />
       </map>
     </option>
   </component>
