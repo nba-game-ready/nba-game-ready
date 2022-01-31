@@ -8,19 +8,10 @@
     android:paddingEnd="8dp"
     android:background="@color/orange_shade">
 
-    <!-- <LinearLayout
-         android:id="@+id/linearLayout"
-         android:layout_width="260dp"
-         android:layout_height="50dp"
-         android:orientation="horizontal"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent">
 
-     </LinearLayout> -->
 
     <ImageView
-        android:id="@+id/team_1_image"
+        android:id="@+id/home_team_image"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
@@ -28,31 +19,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/team_2_image"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/team_1"
+        android:id="@+id/home_team"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="team 1"
-        app:layout_constraintBottom_toTopOf="@+id/team_1_image"
+        android:hint="home team"
+        app:layout_constraintBottom_toTopOf="@+id/home_team_image"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/team1_score"
+        android:id="@+id/home_team_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:hint="score"
-        app:layout_constraintStart_toEndOf="@+id/team_1_image"
+        app:layout_constraintStart_toEndOf="@+id/home_team_image"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -63,22 +45,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <ImageView
+        android:id="@+id/away_team_image"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/team_2"
+        android:id="@+id/away_team"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="team 2"
-        app:layout_constraintBottom_toTopOf="@+id/team_2_image"
+        android:hint="away team"
+        app:layout_constraintBottom_toTopOf="@+id/away_team_image"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/team2_score"
+        android:id="@+id/away_team_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:hint="score"
-        app:layout_constraintEnd_toStartOf="@+id/team_2_image"
+        app:layout_constraintEnd_toStartOf="@+id/away_team_image"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/BuyTix"
@@ -96,7 +87,7 @@
         android:layout_marginBottom="40dp"
         android:hint="Q2 - 08:17"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/team_1_image" />
+        app:layout_constraintStart_toEndOf="@id/home_team_image" />
 
     <ImageView
         android:id="@+id/live_image"
@@ -106,7 +97,7 @@
         android:layout_marginBottom="8dp"
         android:src="@drawable/live_logo"
         app:layout_constraintBottom_toTopOf="@id/info"
-        app:layout_constraintEnd_toEndOf="@id/team2_score" />
+        app:layout_constraintEnd_toEndOf="@id/away_team_score" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
