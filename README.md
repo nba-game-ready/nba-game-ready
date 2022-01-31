@@ -116,4 +116,4 @@ Shikeya & Claire
 =======
 RecyclerView branch added
 
-ViewModel branch added 
+ViewModel branch added
