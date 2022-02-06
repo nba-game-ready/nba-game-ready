@@ -1,5 +1,6 @@
-package com.example.nbagameready.network
 
+
+import com.example.nbagameready.network.Today
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -33,8 +34,8 @@ interface NbaApiService {
     fun getLiveGames(@Query("rapidapi-key") secretValue:String): Call<Today>
 
     @GET("games/date/{currentDateForApi}/")
-    fun getGames(@Path("currentDateForApi") currentDateForApi: String,
-                 @Query("rapidapi-key") secretValue:String): Call<Today>
+     fun getGames(@Path("currentDateForApi") currentDateForApi: String,
+                  @Query("rapidapi-key") secretValue:String): Call<Today>
 
 }
 
