@@ -37,6 +37,7 @@ Displays all live and upcoming NBA games, including live scores and television n
 **Optional Nice-to-have Stories**
 
 * User clicks on a game listed and can see team and player stats
+* User can see twitter feed of comments during live games https://www.trackmyhashtag.com/pricing
 * User can see if they are close to a stadium in map view
 * User can search for a team or player and add them to their favorites list
 * User can set reminders and notifications for games
