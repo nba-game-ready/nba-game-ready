@@ -1,58 +1,35 @@
 package com.example.nbagameready.adapters
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
+import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.R
 import com.example.nbagameready.network.Today
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 
-
-
-class TodayAdapter: ListAdapter<Today, TodayAdapter.TodayViewHolder>(DiffCallback) {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodayViewHolder {
+class TodayAdapter(private val game: Today) : RecyclerView.Adapter<TodayAdapter.ViewHolder>()
+{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.todays_list, parent, false)
-        return TodayViewHolder(view)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: TodayViewHolder, position: Int) {
-        val game = getItem(position)
-        holder.awayTeamName.text = game.api.games[position].vTeam.fullName
-        holder.awayTeamScore.text = game.api.games[position].vTeam.score.points
-        holder.homeTeamScore.text = game.api.games[position].hTeam.score.points
-        holder.homeTeamName.text = game.api.games[position].hTeam.fullName
-        Glide.with(holder.itemView.context).load(game.api.games[position].vTeam.logo ).into(holder.awayTeamImage)
-        Glide.with(holder.itemView.context).load(game.api.games[position].hTeam.logo ).into(holder.homeTeamImage)
-
-
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        return holder.bindView(game)
 
 
     }
 
 
 
-    companion object {
-        private val DiffCallback = object : DiffUtil.ItemCallback<Today>() {
-            override fun areItemsTheSame(oldItem: Today, newItem: Today): Boolean{
-                return oldItem.api == newItem.api
-            }
-            override fun areContentsTheSame(oldItem: Today, newItem: Today): Boolean
-            {
-                return oldItem == newItem
-            }
 
-        }
-    }
-    inner class TodayViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        // Your holder should contain and initialize a member variable
+        // for any view that will be set as you render a row
         val homeTeamImage: ImageView = itemView.findViewById(R.id.home_team_image)
         val awayTeamImage: ImageView = itemView.findViewById(R.id.away_team_image)
         val awayTeamName: TextView = itemView.findViewById(R.id.away_team)
@@ -60,9 +37,24 @@ class TodayAdapter: ListAdapter<Today, TodayAdapter.TodayViewHolder>(DiffCallbac
         val homeTeamScore: TextView = itemView.findViewById(R.id.home_team_score)
         val awayTeamScore: TextView = itemView.findViewById(R.id.away_team_score)
 
+        fun bindView(today: Today){
+            awayTeamName.text = today.api.games.get(bindingAdapterPosition).hTeam.fullName
+            awayTeamScore.text = today.api.games.get(bindingAdapterPosition).vTeam.score.points
+            homeTeamScore.text = today.api.games.get(bindingAdapterPosition).hTeam.score.points
+            homeTeamName.text = today.api.games.get(bindingAdapterPosition).hTeam.fullName
+            Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).vTeam.logo ).into(awayTeamImage)
+            Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).hTeam.logo ).into(homeTeamImage)
+
+        }
     }
 
+    override fun getItemCount(): Int {
+        return game.api.games.size
+    }
+
+
 }
+
 
 
 

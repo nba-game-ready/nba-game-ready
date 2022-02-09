@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.adapters.TodayAdapter
 import com.example.nbagameready.databinding.FragmentTodayBinding
+import com.example.nbagameready.network.Game
 import com.example.nbagameready.network.Today
-import okhttp3.internal.concurrent.Task
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,7 +30,6 @@ class TodayFragment : Fragment() {
     private lateinit var todayAdapter: TodayAdapter
     private lateinit var viewModel: TodayViewModel
     private lateinit var recyclerView: RecyclerView
-    private lateinit var games: Task
     private lateinit var currentDate: String
     private lateinit var ai: ApplicationInfo
 
@@ -42,7 +41,6 @@ class TodayFragment : Fragment() {
 
         _binding = FragmentTodayBinding.inflate(inflater, container, false)
 
-
         return binding.root
 
 
@@ -51,25 +49,25 @@ class TodayFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.recyclerview
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        todayAdapter = TodayAdapter()
-        recyclerView.
-        adapter = todayAdapter
 
-        getGames()
+
+        getNBAGameResponse()
 
     }
 
 
-    fun getGames() {
-        ai = context?.packageManager?.getApplicationInfo(context!!.packageName, PackageManager.GET_META_DATA)!!
-        val value = ai.metaData["keyValue"]
-        val key = value.toString()
+    private fun getNBAGameResponse() {
         currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(
             Date()
         )
+        ai = context?.packageManager
+            ?.getApplicationInfo(context!!.packageName, PackageManager.GET_META_DATA)!!
 
-        val call = NbaApi.retrofitService.getGames(currentDate, key)
+        val value = ai.metaData["keyValue"]
+
+        val key = value.toString()
+        val call =
+            NbaApi.retrofitService.getGames(currentDate, key)
 
         call.enqueue(object : Callback<Today> {
 
@@ -88,18 +86,31 @@ class TodayFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
 
+                    recyclerView.apply {
+                        recyclerView.layoutManager = LinearLayoutManager(context)
+                        adapter = response.body()?.let { TodayAdapter(it) }
+                        recyclerView.adapter = adapter
+                    }
 
-                    todayAdapter.notifyDataSetChanged()
+
+
+
 
                 } else {
+
                     Log.e(
+
                         "MainActivity",
+
                         "Failed to get games${response.errorBody()?.string() ?: ""}"
                     )
-                }
-            }
-        })
 
+                }
+
+            }
+
+        })
     }
 
 }
+

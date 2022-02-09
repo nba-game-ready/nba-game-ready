@@ -5,24 +5,12 @@ import androidx.lifecycle.ViewModel
 import com.example.nbagameready.network.Game
 import com.example.nbagameready.network.Today
 
-class TodayViewModel(private val repository: Repository) : ViewModel() {
-    val uiModel: MutableLiveData<Today> by lazy {
-        MutableLiveData<Today>()
+class TodayViewModel : ViewModel() {
+    val games: MutableLiveData<Game> by lazy {
+        MutableLiveData<Game>()
 
     }
 
-    fun generateReport (){
-        // TODO Add complicated report computation
-    }
-
-    fun deleteToday(today: Today?) {
-        deleteTodayFromRepository(today)
-        uiModel.value?.api?.games
 
 
-    }
-
-    fun deleteTodayFromRepository(today: Today?) {
-        if(today != null) { repository.delete(today) }
-    }
 }
