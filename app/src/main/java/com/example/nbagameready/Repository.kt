@@ -1,15 +1,16 @@
 package com.example.nbagameready
 
 import androidx.lifecycle.LiveData
+import com.example.nbagameready.network.Game
 import com.example.nbagameready.network.Today
 
 interface Repository {
 
-    fun insert(today: Today)
+    fun insert(game: Game)
 
-    fun getAll(): LiveData<List<Today>>
+    fun getAll(): LiveData<List<Game>>
 
-    fun delete(today: Today)
+    fun delete(game: Game)
 
-    fun update(today: Today)
+    fun update(game: Game)
 }

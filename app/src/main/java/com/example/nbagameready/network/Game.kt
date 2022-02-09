@@ -1,7 +1,7 @@
 package com.example.nbagameready.network
 
-data class Game(
 
+data class Game(
     val EndOfPeriod: String,
     val arena: String,
     val city: String,
