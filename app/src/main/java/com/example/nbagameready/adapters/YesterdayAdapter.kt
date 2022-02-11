@@ -29,8 +29,8 @@ class YesterdayAdapter(private val game: Games) : RecyclerView.Adapter<Yesterday
         // for any view that will be set as you render a row
         private val homeTeamImage: ImageView = itemView.findViewById(R.id.home_team_image)
         private val awayTeamImage: ImageView = itemView.findViewById(R.id.away_team_image)
-        private val awayTeamName: TextView = itemView.findViewById(R.id.away_team)
-        private val homeTeamName: TextView = itemView.findViewById(R.id.home_team)
+        private val awayTeamName: TextView = itemView.findViewById(R.id.away_team_name)
+        private val homeTeamName: TextView = itemView.findViewById(R.id.home_team_name)
         private val homeTeamScore: TextView = itemView.findViewById(R.id.home_team_score)
         private val awayTeamScore: TextView = itemView.findViewById(R.id.away_team_score)
 

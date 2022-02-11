@@ -37,5 +37,8 @@
         <action
             android:id="@+id/action_yesterdayFragment_to_todayFragment"
             app:destination="@id/todayFragment" />
+        <action
+            android:id="@+id/action_yesterdayFragment_to_tomorrowFragment"
+            app:destination="@id/tomorrowFragment" />
     </fragment>
 </navigation>
