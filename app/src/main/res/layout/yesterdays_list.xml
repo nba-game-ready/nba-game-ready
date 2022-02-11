@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,13 +15,14 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/home_team_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="home team"
+        android:hint="@string/home_team"
         app:layout_constraintBottom_toTopOf="@+id/home_team_image"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -30,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
-        android:hint="score"
+        android:hint="@string/score"
         app:layout_constraintStart_toEndOf="@+id/home_team_image"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,7 +40,7 @@
         android:id="@+id/away_team_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="away team"
+        android:hint="@string/away_team"
         app:layout_constraintBottom_toTopOf="@+id/away_team_image"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -48,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
-        android:hint="score"
+        android:hint="@string/score"
         app:layout_constraintEnd_toStartOf="@+id/away_team_image"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +61,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/time"
@@ -67,8 +70,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="132dp"
         android:layout_marginBottom="60dp"
-        android:text="FINAL"
+        android:text="@string/final_score"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/home_team_image" />
+        app:layout_constraintStart_toEndOf="@id/home_team_image"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
