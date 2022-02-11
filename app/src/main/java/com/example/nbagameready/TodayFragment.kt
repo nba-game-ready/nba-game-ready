@@ -26,8 +26,6 @@ class TodayFragment : Fragment() {
     }
     private var _binding: FragmentTodayBinding? = null
     val binding get() = _binding!!
-    private lateinit var todayAdapter: TodayAdapter
-    private lateinit var viewModel: TodayViewModel
     private lateinit var recyclerView: RecyclerView
     private lateinit var currentDate: String
     private lateinit var ai: ApplicationInfo
@@ -90,10 +88,6 @@ class TodayFragment : Fragment() {
                         adapter = response.body()?.let { TodayAdapter(it) }
                         recyclerView.adapter = adapter
                     }
-
-
-
-
 
                 } else {
 
