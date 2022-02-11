@@ -1,5 +1,5 @@
 package com.example.nbagameready.network
 
-data class Today(
+data class Games(
     val api: Api
 )
