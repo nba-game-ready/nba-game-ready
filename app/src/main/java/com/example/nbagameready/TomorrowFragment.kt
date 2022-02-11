@@ -63,9 +63,18 @@ class TomorrowFragment : Fragment() {
 
 
     private fun getNBAGameResponse() {
-        currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(
-            Date()
+        val date = SimpleDateFormat("yyyy-MM-dd").format(
+            System.currentTimeMillis()
         )
+
+        val sdf = SimpleDateFormat("yyyy-MM-dd")
+        val c = Calendar.getInstance()
+        //Setting the date to the given date
+        c.time = sdf.parse(date)
+
+        c.add(Calendar.DAY_OF_MONTH, 2)
+        val newDate = sdf.format(c.time)
+
         ai = context?.packageManager
             ?.getApplicationInfo(requireContext().packageName, PackageManager.GET_META_DATA)!!
 
@@ -73,7 +82,7 @@ class TomorrowFragment : Fragment() {
 
         val key = value.toString()
         val call =
-            NbaApi.retrofitService.getGames(currentDate, key)
+            NbaApi.retrofitService.getGames(newDate, key)
 
         call.enqueue(object : Callback<Games> {
 
