@@ -15,7 +15,7 @@
         android:background="@drawable/ic_baseline_menu_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck, contentDescription" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/title_nba"
@@ -29,8 +29,7 @@
         android:textColor="@color/dark_grey"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="contentDescription"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ball_bounce"
@@ -41,8 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="contentDescription"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -66,8 +64,7 @@
         android:layout_height="67dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_account_box_24"
-        tools:ignore="contentDescription"/>
+        app:srcCompat="@drawable/ic_baseline_account_box_24" />
 
     <View
         android:id="@+id/divider"
@@ -100,8 +97,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:strokeColor="#fff3e0"
-            app:strokeWidth="6dp"
-            tools:ignore="ButtonStyle"/>
+            app:strokeWidth="6dp" />
 
         <Button
             android:id="@+id/button2"
@@ -114,8 +110,7 @@
             app:layout_constraintEnd_toStartOf="@+id/button3"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/button"
-            app:strokeColor="#FFFFFF"
-            tools:ignore="ButtonStyle"/>
+            app:strokeColor="#FFFFFF" />
 
         <Button
             android:id="@+id/button3"
@@ -127,8 +122,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="#fff3e0"
-            app:strokeWidth="6dp"
-            tools:ignore="ButtonStyle"/>
+            app:strokeWidth="6dp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -198,6 +192,6 @@
         android:background="@drawable/twitter_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/linearLayout_bottom"
-        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck, contentDescription" />
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
