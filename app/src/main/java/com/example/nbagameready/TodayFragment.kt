@@ -12,8 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.adapters.TodayAdapter
 import com.example.nbagameready.databinding.FragmentTodayBinding
-import com.example.nbagameready.network.Game
-import com.example.nbagameready.network.Today
+import com.example.nbagameready.network.Games
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -69,9 +68,9 @@ class TodayFragment : Fragment() {
         val call =
             NbaApi.retrofitService.getGames(currentDate, key)
 
-        call.enqueue(object : Callback<Today> {
+        call.enqueue(object : Callback<Games> {
 
-            override fun onFailure(call: Call<Today>, t: Throwable) {
+            override fun onFailure(call: Call<Games>, t: Throwable) {
 
                 Log.e("MainActivity", "Failed to get games", t)
 
@@ -79,9 +78,9 @@ class TodayFragment : Fragment() {
 
             override fun onResponse(
 
-                call: Call<Today>,
+                call: Call<Games>,
 
-                response: Response<Today>
+                response: Response<Games>
 
             ) {
                 if (response.isSuccessful) {

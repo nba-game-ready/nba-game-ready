@@ -8,9 +8,9 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.R
-import com.example.nbagameready.network.Today
+import com.example.nbagameready.network.Games
 
-class TodayAdapter(private val game: Today) : RecyclerView.Adapter<TodayAdapter.ViewHolder>()
+class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.ViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -37,13 +37,13 @@ class TodayAdapter(private val game: Today) : RecyclerView.Adapter<TodayAdapter.
         val homeTeamScore: TextView = itemView.findViewById(R.id.home_team_score)
         val awayTeamScore: TextView = itemView.findViewById(R.id.away_team_score)
 
-        fun bindView(today: Today){
-            awayTeamName.text = today.api.games.get(bindingAdapterPosition).vTeam.fullName
-            awayTeamScore.text = today.api.games.get(bindingAdapterPosition).vTeam.score.points
-            homeTeamScore.text = today.api.games.get(bindingAdapterPosition).hTeam.score.points
-            homeTeamName.text = today.api.games.get(bindingAdapterPosition).hTeam.fullName
-            Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).vTeam.logo ).into(awayTeamImage)
-            Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).hTeam.logo ).into(homeTeamImage)
+        fun bindView(games: Games){
+            awayTeamName.text = games.api.games.get(bindingAdapterPosition).vTeam.fullName
+            awayTeamScore.text = games.api.games.get(bindingAdapterPosition).vTeam.score.points
+            homeTeamScore.text = games.api.games.get(bindingAdapterPosition).hTeam.score.points
+            homeTeamName.text = games.api.games.get(bindingAdapterPosition).hTeam.fullName
+            Glide.with(itemView.context).load(games.api.games.get(bindingAdapterPosition).vTeam.logo ).into(awayTeamImage)
+            Glide.with(itemView.context).load(games.api.games.get(bindingAdapterPosition).hTeam.logo ).into(homeTeamImage)
 
         }
     }
