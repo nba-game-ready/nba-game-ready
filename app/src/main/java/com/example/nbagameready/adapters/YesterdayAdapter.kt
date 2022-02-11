@@ -35,7 +35,7 @@ class YesterdayAdapter(private val game: Games) : RecyclerView.Adapter<Yesterday
         private val awayTeamScore: TextView = itemView.findViewById(R.id.away_team_score)
 
         fun bindView(yesterday: Games){
-            awayTeamName.text = yesterday.api.games.get(bindingAdapterPosition).hTeam.fullName
+            awayTeamName.text = yesterday.api.games.get(bindingAdapterPosition).vTeam.fullName
             awayTeamScore.text = yesterday.api.games.get(bindingAdapterPosition).vTeam.score.points
             homeTeamScore.text = yesterday.api.games.get(bindingAdapterPosition).hTeam.score.points
             homeTeamName.text = yesterday.api.games.get(bindingAdapterPosition).hTeam.fullName
