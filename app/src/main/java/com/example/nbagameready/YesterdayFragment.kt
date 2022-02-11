@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.adapters.YesterdayAdapter
@@ -50,6 +51,14 @@ class YesterdayFragment : Fragment() {
 
         getNBAGameResponse()
 
+        binding.todayButton.setOnClickListener {
+            findNavController().navigate(YesterdayFragmentDirections.actionYesterdayFragmentToTodayFragment())
+        }
+
+        binding.tomorrowButton.setOnClickListener {
+            findNavController().navigate(YesterdayFragmentDirections.actionYesterdayFragmentToTomorrowFragment())
+        }
+
     }
 
 
@@ -58,7 +67,7 @@ class YesterdayFragment : Fragment() {
             Date()
         )
         ai = context?.packageManager
-            ?.getApplicationInfo(context!!.packageName, PackageManager.GET_META_DATA)!!
+            ?.getApplicationInfo(requireContext().packageName, PackageManager.GET_META_DATA)!!
 
         val value = ai.metaData["keyValue"]
 
