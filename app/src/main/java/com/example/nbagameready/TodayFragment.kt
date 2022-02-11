@@ -18,17 +18,21 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
+import kotlin.time.Duration.Companion.days
 
 class TodayFragment : Fragment() {
 
     companion object {
         fun newInstance() = TodayFragment()
     }
+
     private var _binding: FragmentTodayBinding? = null
     val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView
-    private lateinit var currentDate: String
+    private lateinit var date: String
     private lateinit var ai: ApplicationInfo
 
 
@@ -63,9 +67,20 @@ class TodayFragment : Fragment() {
 
 
     private fun getNBAGameResponse() {
-        currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(
-            Date()
+
+        val date = SimpleDateFormat("yyyy-MM-dd").format(
+            System.currentTimeMillis()
         )
+
+        val sdf = SimpleDateFormat("yyyy-MM-dd")
+        val c = Calendar.getInstance()
+        //Setting the date to the given date
+        c.time = sdf.parse(date)
+
+        c.add(Calendar.DAY_OF_MONTH, 1)
+        val newDate = sdf.format(c.time)
+
+
         ai = context?.packageManager
             ?.getApplicationInfo(requireContext().packageName, PackageManager.GET_META_DATA)!!
 
@@ -73,7 +88,7 @@ class TodayFragment : Fragment() {
 
         val key = value.toString()
         val call =
-            NbaApi.retrofitService.getGames(currentDate, key)
+            NbaApi.retrofitService.getGames(newDate, key)
 
         call.enqueue(object : Callback<Games> {
 
@@ -112,7 +127,8 @@ class TodayFragment : Fragment() {
             }
 
         })
-    }
 
+
+    }
 }
 
