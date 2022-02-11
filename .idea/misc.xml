@@ -7,20 +7,9 @@
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/fragment_today.xml" value="0.1" />
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/fragment_tomorrow.xml" value="0.1" />
+        <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/fragment_yesterday.xml" value="0.1" />
+        <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/today_fragment.xml" value="0.1" />
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/todays_list.xml" value="0.25" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="corretto-1.8" project-jdk-type="JavaSDK">
-        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/drawable/gradient.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/drawable/splash_background.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/activity_main.xml" value="0.3" />
-        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/activity_splash.xml" value="0.3625" />
-        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/teams.xml" value="0.3625" />
-        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/todays_list.xml" value="0.3625" />
-        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/tomorrows_list.xml" value="0.3625" />
-        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/layout/yesterdays_list.xml" value="0.3625" />
-        <entry key="..\:/Users/shike/AndroidStudioProjects/nba-game-ready/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2942708333333333" />
       </map>
     </option>
   </component>
