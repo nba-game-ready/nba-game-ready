@@ -1,7 +1,5 @@
 package com.example.nbagameready.network
 
-import com.example.nbagameready.network.Score
-
 
 data class HTeam(
     val fullName: String,
