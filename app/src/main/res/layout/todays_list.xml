@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:paddingStart="8dp"
     android:paddingEnd="8dp"
     android:background="@color/orange_shade">
-
 
 
     <ImageView
@@ -16,17 +14,18 @@
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/home_team"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/home_team"
+        android:hint="home team"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/home_team_image"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/home_team_score"
@@ -34,7 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
-        android:hint="@string/score"
+        android:hint="score"
+        android:visibility="visible"
         app:layout_constraintStart_toEndOf="@+id/home_team_image"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +42,7 @@
         android:id="@+id/network"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/network_abc"
+        android:hint="Network:ABC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -59,7 +59,7 @@
         android:id="@+id/away_team"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/away_team"
+        android:hint="away team"
         app:layout_constraintBottom_toTopOf="@+id/away_team_image"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -69,36 +69,26 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
-        android:hint="@string/score"
+        android:hint="score"
         app:layout_constraintEnd_toStartOf="@+id/away_team_image"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/BuyTix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/buytix"
+        android:hint="BuyTix"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/quarter"
+        android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
         android:layout_marginBottom="40dp"
-        android:hint="@string/q2"
+        android:hint="Q2 - 08:17"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/home_team_image" />
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:hint="@string/_08_12"
-        app:layout_constraintStart_toEndOf="@+id/quarter"
-        app:layout_constraintTop_toBottomOf="@id/live_image" />
 
     <ImageView
         android:id="@+id/live_image"
@@ -107,9 +97,8 @@
         android:layout_marginEnd="104dp"
         android:layout_marginBottom="8dp"
         android:src="@drawable/live_logo"
-        app:layout_constraintBottom_toTopOf="@id/quarter"
-        app:layout_constraintEnd_toEndOf="@id/away_team_score"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintBottom_toTopOf="@id/info"
+        app:layout_constraintEnd_toEndOf="@id/away_team_score" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
