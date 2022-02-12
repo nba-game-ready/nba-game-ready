@@ -9,5 +9,14 @@
     <string name="nba">NBA</string>
     <string name="alerts_here">alerts here!</string>
     <string name="get_your">Get your</string>
+    <string name="_08_12">08:12</string>
+    <string name="q2">Q2</string>
+    <string name="home_team">home team</string>
+    <string name="score">score</string>
+    <string name="away_team">away team</string>
+    <string name="network_abc">Network:ABC</string>
+    <string name="buytix">BuyTix</string>
+    <string name="game_time">Game time</string>
+    <string name="final_score">Final</string>
 
 </resources>
