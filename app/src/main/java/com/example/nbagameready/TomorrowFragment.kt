@@ -105,6 +105,7 @@ class TomorrowFragment : Fragment() {
                         recyclerView.layoutManager = LinearLayoutManager(context)
                         adapter = response.body()?.let { TomorrowAdapter(it) }
                         recyclerView.adapter = adapter
+
                     }
 
                 } else {
