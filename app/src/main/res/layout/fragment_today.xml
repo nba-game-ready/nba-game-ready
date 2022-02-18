@@ -195,7 +195,7 @@
 
     <ImageButton
         android:id="@+id/twitter_tweets"
-        android:layout_width="67dp"
+        android:layout_width="65dp"
         android:layout_height="58dp"
         android:background="@drawable/twitter_logo"
         app:layout_constraintBottom_toBottomOf="parent"
