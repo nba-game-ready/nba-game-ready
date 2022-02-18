@@ -111,6 +111,7 @@ class TodayFragment : Fragment() {
                         recyclerView.layoutManager = LinearLayoutManager(context)
                         adapter = response.body()?.let { TodayAdapter(it) }
                         recyclerView.adapter = adapter
+
                     }
 
                 } else {
