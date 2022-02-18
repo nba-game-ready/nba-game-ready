@@ -66,7 +66,7 @@
         android:layout_height="67dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_account_box_24"
+        android:src="@drawable/ic_baseline_account_box_24"
         tools:ignore="contentDescription"/>
 
     <View
@@ -133,12 +133,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="413dp"
-        android:layout_height="470dp"
+        android:layout_width="390dp"
+        android:layout_height="557dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout_bottom"/>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.523" />
 
     <LinearLayout
         android:id="@+id/linearLayout_bottom"
@@ -200,4 +202,16 @@
         app:layout_constraintStart_toEndOf="@id/linearLayout_bottom"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck, contentDescription" />
 
+    <TextView
+        android:id="@+id/noGamesToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Available Games Today"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.593" />
 </androidx.constraintlayout.widget.ConstraintLayout>
