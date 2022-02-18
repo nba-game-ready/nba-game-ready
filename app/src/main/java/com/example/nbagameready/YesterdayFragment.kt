@@ -79,7 +79,7 @@ class YesterdayFragment : Fragment() {
 
             override fun onFailure(call: Call<Games>, t: Throwable) {
 
-                Log.e("MainActivity", "Failed to get games", t)
+                Log.e("Yesterday Fragment", "Failed to get games", t)
 
             }
 
@@ -102,7 +102,7 @@ class YesterdayFragment : Fragment() {
 
                     Log.e(
 
-                        "MainActivity",
+                        "Yesterday Fragment",
 
                         "Failed to get games${response.errorBody()?.string() ?: ""}"
                     )
