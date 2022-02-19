@@ -106,21 +106,21 @@ class TodayFragment : Fragment() {
 
             ) {
                 if (response.isSuccessful) {
+                    if (response.body()?.api?.games?.size  == 0){
+                        binding.noGamesToday.visibility = View.VISIBLE
+                        binding.recyclerview.visibility = View.INVISIBLE
 
-                    recyclerView.apply {
-                        recyclerView.layoutManager = LinearLayoutManager(context)
-                        adapter = response.body()?.let { TodayAdapter(it) }
-                        if (adapter == null)
-                        {
-                            binding.noGamesToday.visibility = View.VISIBLE
-
-                        } else {
-                            binding.noGamesToday.visibility = View.INVISIBLE
+                    } else {
+                        binding.noGamesToday.visibility = View.INVISIBLE
+                        binding.recyclerview.visibility = View.VISIBLE
+                        recyclerView.apply {
+                            recyclerView.layoutManager = LinearLayoutManager(context)
+                            adapter = response.body()?.let { TodayAdapter(it) }
+                            recyclerView.adapter = adapter
 
                         }
-                        recyclerView.adapter = adapter
-
                     }
+
 
                 } else {
 
