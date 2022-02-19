@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -102,8 +103,19 @@ class TomorrowFragment : Fragment() {
                 if (response.isSuccessful) {
 
                     recyclerView.apply {
+
                         recyclerView.layoutManager = LinearLayoutManager(context)
                         adapter = response.body()?.let { TomorrowAdapter(it) }
+
+                        if (adapter == null)
+                        {
+                            binding.noGamesToday.visibility = View.VISIBLE
+
+                        } else {
+                            binding.noGamesToday.visibility = View.INVISIBLE
+
+                        }
+
                         recyclerView.adapter = adapter
 
                     }

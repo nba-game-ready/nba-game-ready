@@ -110,6 +110,14 @@ class TodayFragment : Fragment() {
                     recyclerView.apply {
                         recyclerView.layoutManager = LinearLayoutManager(context)
                         adapter = response.body()?.let { TodayAdapter(it) }
+                        if (adapter == null)
+                        {
+                            binding.noGamesToday.visibility = View.VISIBLE
+
+                        } else {
+                            binding.noGamesToday.visibility = View.INVISIBLE
+
+                        }
                         recyclerView.adapter = adapter
 
                     }
