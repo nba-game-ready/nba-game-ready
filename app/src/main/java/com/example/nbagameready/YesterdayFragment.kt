@@ -91,12 +91,20 @@ class YesterdayFragment : Fragment() {
 
             ) {
                 if (response.isSuccessful) {
+                    if (response.body()?.api?.games?.size  == 0){
+                        binding.noGamesYesterday.visibility = View.VISIBLE
+                        binding.recyclerview.visibility = View.INVISIBLE
 
-                    recyclerView.apply {
-                        recyclerView.layoutManager = LinearLayoutManager(context)
-                        adapter = response.body()?.let { YesterdayAdapter(it) }
-                        recyclerView.adapter = adapter
+                    } else {
+                        binding.noGamesYesterday.visibility = View.INVISIBLE
+                        binding.recyclerview.visibility = View.VISIBLE
+                        recyclerView.apply {
+                            recyclerView.layoutManager = LinearLayoutManager(context)
+                            adapter = response.body()?.let { YesterdayAdapter(it) }
+                            recyclerView.adapter = adapter
+                        }
                     }
+
 
                 } else {
 
