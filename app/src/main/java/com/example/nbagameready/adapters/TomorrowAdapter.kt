@@ -10,8 +10,14 @@ import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.R
 import com.example.nbagameready.network.Games
+import java.lang.Exception
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.LocalTime
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAdapter.ViewHolder>()
 {
@@ -41,29 +47,29 @@ class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAd
         val gameStartTime: TextView = itemView.findViewById(R.id.time)
 
 
-
-        fun bindView(tomorrow: Games){
+        fun bindView(tomorrow: Games) {
             awayTeamName.text = tomorrow.api.games.get(bindingAdapterPosition).vTeam.fullName
             awayTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).vTeam.score.points
             homeTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.score.points
             homeTeamName.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.fullName
-
-            gameStartTime.text = fmtDateTime(tomorrow.api.games.get(bindingAdapterPosition).startTimeUTC.substring(0,16))
-            Glide.with(itemView.context).load(tomorrow.api.games.get(bindingAdapterPosition).vTeam.logo ).into(awayTeamImage)
-            Glide.with(itemView.context).load(tomorrow.api.games.get(bindingAdapterPosition).hTeam.logo ).into(homeTeamImage)
+            gameStartTime.text = fmtDateTime(tomorrow.api.games.get(bindingAdapterPosition).startTimeUTC)
+            Glide.with(itemView.context)
+                .load(tomorrow.api.games.get(bindingAdapterPosition).vTeam.logo).into(awayTeamImage)
+            Glide.with(itemView.context)
+                .load(tomorrow.api.games.get(bindingAdapterPosition).hTeam.logo).into(homeTeamImage)
 
         }
         fun fmtDateTime(datetime: String): String? {
-            var datetime = datetime
-            datetime = datetime.replaceFirst("[+\\-]\\d\\d:\\d\\d$".toRegex(), "")
-            val dt = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                LocalDateTime.parse(datetime)
-            } else {
-                TODO("VERSION.SDK_INT < O")
+            val inDF: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+            inDF.timeZone = TimeZone.getTimeZone("UTC")
 
-            }
-            val fmt = DateTimeFormatter.ofPattern("hh:mm  a ")
-            return dt.format(fmt)
+            val aDate = inDF.parse(datetime)
+
+            val outDF: DateFormat = SimpleDateFormat("hh:mm a")
+            outDF.timeZone = TimeZone.getDefault()
+
+            val strDateOut = outDF.format(aDate)
+            return strDateOut
         }
     }
 
