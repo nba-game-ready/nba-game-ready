@@ -36,14 +36,40 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
         val homeTeamName: TextView = itemView.findViewById(R.id.home_team)
         val homeTeamScore: TextView = itemView.findViewById(R.id.home_team_score)
         val awayTeamScore: TextView = itemView.findViewById(R.id.away_team_score)
+        val liveImage: ImageView = itemView.findViewById(R.id.live_image)
+        val info: TextView = itemView.findViewById(R.id.info)
 
         fun bindView(today: Games){
             awayTeamName.text = today.api.games.get(bindingAdapterPosition).vTeam.fullName
             awayTeamScore.text = today.api.games.get(bindingAdapterPosition).vTeam.score.points
             homeTeamScore.text = today.api.games.get(bindingAdapterPosition).hTeam.score.points
             homeTeamName.text = today.api.games.get(bindingAdapterPosition).hTeam.fullName
+            val currentPeriod = today.api.games.get(bindingAdapterPosition).currentPeriod
+            val clock = today.api.games.get(bindingAdapterPosition).clock
+            "$currentPeriod: $clock".also { info.text = it }
+
             Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).vTeam.logo ).into(awayTeamImage)
             Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).hTeam.logo ).into(homeTeamImage)
+
+            val gameStatus = today.api.games.get(bindingAdapterPosition).statusGame
+            when (gameStatus) {
+                "Scheduled" -> {
+                    liveImage.visibility = View.INVISIBLE
+                    awayTeamScore.visibility = View.INVISIBLE
+                    homeTeamScore.visibility = View.INVISIBLE
+                    info.visibility = View.INVISIBLE
+
+                }
+                "Finished" -> {
+                    liveImage.visibility = View.INVISIBLE
+                    awayTeamScore.visibility = View.VISIBLE
+                    homeTeamScore.visibility = View.VISIBLE
+                }
+                else -> {
+                    liveImage.visibility = View.VISIBLE
+                    info.visibility = View.VISIBLE
+                }
+            }
 
         }
     }
