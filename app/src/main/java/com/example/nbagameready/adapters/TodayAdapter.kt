@@ -45,8 +45,15 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
             homeTeamScore.text = today.api.games.get(bindingAdapterPosition).hTeam.score.points
             homeTeamName.text = today.api.games.get(bindingAdapterPosition).hTeam.fullName
             val currentPeriod = today.api.games.get(bindingAdapterPosition).currentPeriod
-            val clock = today.api.games.get(bindingAdapterPosition).clock
-            "$currentPeriod: $clock".also { info.text = it }
+            var clock = today.api.games.get(bindingAdapterPosition).clock
+
+            val halfOrClock = if(clock.isEmpty()){
+
+                "halftime".also { clock = it }
+            } else{
+                clock
+            }
+            "Q${currentPeriod[0]}: $halfOrClock".also { info.text = it }
 
             Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).vTeam.logo ).into(awayTeamImage)
             Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).hTeam.logo ).into(homeTeamImage)
