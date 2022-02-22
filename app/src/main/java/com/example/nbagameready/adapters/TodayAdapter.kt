@@ -1,5 +1,7 @@
 package com.example.nbagameready.adapters
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +40,8 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
         val awayTeamScore: TextView = itemView.findViewById(R.id.away_team_score)
         val liveImage: ImageView = itemView.findViewById(R.id.live_image)
         val info: TextView = itemView.findViewById(R.id.info)
+        val buyTicket: TextView = itemView.findViewById(R.id.BuyTix)
+
 
         fun bindView(today: Games){
             awayTeamName.text = today.api.games.get(bindingAdapterPosition).vTeam.nickName
@@ -78,6 +82,15 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
                     info.visibility = View.VISIBLE
                 }
             }
+
+            buyTicket.setOnClickListener{
+                val intent = Intent()
+                intent.action = Intent.ACTION_VIEW
+                intent.addCategory(Intent.CATEGORY_BROWSABLE)
+                intent.data = Uri.parse("https://www.stubhub.com/nba-tickets/grouping/115/")
+                itemView.context.startActivity(intent)
+            }
+
 
         }
     }
