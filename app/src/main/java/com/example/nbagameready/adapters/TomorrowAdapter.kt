@@ -48,10 +48,10 @@ class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAd
 
 
         fun bindView(tomorrow: Games) {
-            awayTeamName.text = tomorrow.api.games.get(bindingAdapterPosition).vTeam.fullName
+            awayTeamName.text = tomorrow.api.games.get(bindingAdapterPosition).vTeam.nickName
             awayTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).vTeam.score.points
             homeTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.score.points
-            homeTeamName.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.fullName
+            homeTeamName.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.nickName
             gameStartTime.text = fmtDateTime(tomorrow.api.games.get(bindingAdapterPosition).startTimeUTC)
             Glide.with(itemView.context)
                 .load(tomorrow.api.games.get(bindingAdapterPosition).vTeam.logo).into(awayTeamImage)

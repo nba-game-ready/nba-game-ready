@@ -40,14 +40,14 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
         val info: TextView = itemView.findViewById(R.id.info)
 
         fun bindView(today: Games){
-            awayTeamName.text = today.api.games.get(bindingAdapterPosition).vTeam.fullName
+            awayTeamName.text = today.api.games.get(bindingAdapterPosition).vTeam.nickName
             awayTeamScore.text = today.api.games.get(bindingAdapterPosition).vTeam.score.points
             homeTeamScore.text = today.api.games.get(bindingAdapterPosition).hTeam.score.points
-            homeTeamName.text = today.api.games.get(bindingAdapterPosition).hTeam.fullName
+            homeTeamName.text = today.api.games.get(bindingAdapterPosition).hTeam.nickName
             val currentPeriod = today.api.games.get(bindingAdapterPosition).currentPeriod
             var clock = today.api.games.get(bindingAdapterPosition).clock
 
-            val halfOrClock = if(clock.isEmpty()){
+            val halfOrClock = if(clock.isEmpty() && clock.isBlank()){
 
                 "halftime".also { clock = it }
             } else{
@@ -71,6 +71,7 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
                     liveImage.visibility = View.INVISIBLE
                     awayTeamScore.visibility = View.VISIBLE
                     homeTeamScore.visibility = View.VISIBLE
+                    info.visibility = View.INVISIBLE
                 }
                 else -> {
                     liveImage.visibility = View.VISIBLE
