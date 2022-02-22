@@ -1,6 +1,5 @@
 package com.example.nbagameready.adapters
 
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +9,8 @@ import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.R
 import com.example.nbagameready.network.Games
-import java.lang.Exception
 import java.text.DateFormat
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.LocalTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAdapter.ViewHolder>()
@@ -52,7 +46,13 @@ class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAd
             awayTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).vTeam.score.points
             homeTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.score.points
             homeTeamName.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.nickName
-            gameStartTime.text = fmtDateTime(tomorrow.api.games.get(bindingAdapterPosition).startTimeUTC)
+            val starTime = fmtDateTime(tomorrow.api.games.get(bindingAdapterPosition).startTimeUTC)
+            if(starTime?.get(0).toString() == "0"){
+
+                gameStartTime.text = starTime?.substring(1,starTime.length)
+            } else{
+                gameStartTime.text = starTime
+            }
             Glide.with(itemView.context)
                 .load(tomorrow.api.games.get(bindingAdapterPosition).vTeam.logo).into(awayTeamImage)
             Glide.with(itemView.context)
@@ -68,8 +68,7 @@ class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAd
             val outDF: DateFormat = SimpleDateFormat("hh:mm a")
             outDF.timeZone = TimeZone.getDefault()
 
-            val strDateOut = outDF.format(aDate)
-            return strDateOut
+            return outDF.format(aDate)
         }
     }
 
