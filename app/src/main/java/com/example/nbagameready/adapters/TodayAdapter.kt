@@ -5,6 +5,8 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
@@ -41,6 +43,8 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
         val liveImage: ImageView = itemView.findViewById(R.id.live_image)
         val info: TextView = itemView.findViewById(R.id.info)
         val buyTicket: TextView = itemView.findViewById(R.id.BuyTix)
+
+
 
 
         fun bindView(today: Games){
@@ -90,6 +94,10 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
                 intent.data = Uri.parse("https://www.stubhub.com/nba-tickets/grouping/115/")
                 itemView.context.startActivity(intent)
             }
+
+
+
+
 
 
         }

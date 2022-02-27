@@ -1,7 +1,9 @@
 package com.example.nbagameready
 
+import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -61,6 +63,14 @@ class TodayFragment : Fragment() {
 
         binding.button3.setOnClickListener {
             findNavController().navigate(TodayFragmentDirections.actionTodayFragmentToTomorrowFragment())
+        }
+
+        binding.twitterTweets.setOnClickListener{
+            val intent = Intent()
+            intent.action = Intent.ACTION_VIEW
+            intent.addCategory(Intent.CATEGORY_BROWSABLE)
+            intent.data = Uri.parse("https://twitter.com/search?q=nba&src=typed_query")
+            startActivity(intent)
         }
 
     }
