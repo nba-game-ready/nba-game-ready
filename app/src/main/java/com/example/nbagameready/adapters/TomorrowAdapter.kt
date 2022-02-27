@@ -37,18 +37,18 @@ class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAd
         // for any view that will be set as you render a row
         val homeTeamImage: ImageView = itemView.findViewById(com.example.nbagameready.R.id.home_team_image)
         val awayTeamImage: ImageView = itemView.findViewById(com.example.nbagameready.R.id.away_team_image)
-        val awayTeamName: TextView = itemView.findViewById(com.example.nbagameready.R.id.away_team_name)
-        val homeTeamName: TextView = itemView.findViewById(com.example.nbagameready.R.id.home_team_name)
-        val homeTeamScore: TextView = itemView.findViewById(com.example.nbagameready.R.id.home_team_score)
-        val awayTeamScore: TextView = itemView.findViewById(com.example.nbagameready.R.id.away_team_score)
+        val awayTeamName: TextView = itemView.findViewById(com.example.nbagameready.R.id.away_team)
+        val homeTeamName: TextView = itemView.findViewById(com.example.nbagameready.R.id.home_team)
+        //val homeTeamScore: TextView = itemView.findViewById(com.example.nbagameready.R.id.home_team_score)
+        //val awayTeamScore: TextView = itemView.findViewById(com.example.nbagameready.R.id.away_team_score)
         val gameStartTime: TextView = itemView.findViewById(com.example.nbagameready.R.id.time)
         val buyTicket: TextView = itemView.findViewById(com.example.nbagameready.R.id.BuyTix)
 
 
         fun bindView(tomorrow: Games) {
             awayTeamName.text = tomorrow.api.games.get(bindingAdapterPosition).vTeam.nickName
-            awayTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).vTeam.score.points
-            homeTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.score.points
+            //awayTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).vTeam.score.points
+            //homeTeamScore.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.score.points
             homeTeamName.text = tomorrow.api.games.get(bindingAdapterPosition).hTeam.nickName
             Glide.with(itemView.context)
                 .load(tomorrow.api.games.get(bindingAdapterPosition).vTeam.logo).into(awayTeamImage)
