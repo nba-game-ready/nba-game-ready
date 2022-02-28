@@ -26,6 +26,9 @@ import java.util.*
 import kotlin.time.Duration.Companion.days
 
 class TodayFragment : Fragment() {
+    /***
+     * Today Fragment to showcase the games that are airing today
+     */
 
     companion object {
         fun newInstance() = TodayFragment()
@@ -65,6 +68,7 @@ class TodayFragment : Fragment() {
             findNavController().navigate(TodayFragmentDirections.actionTodayFragmentToTomorrowFragment())
         }
 
+        // Sends user to twitter nba live tweets
         binding.twitterTweets.setOnClickListener{
             val intent = Intent()
             intent.action = Intent.ACTION_VIEW

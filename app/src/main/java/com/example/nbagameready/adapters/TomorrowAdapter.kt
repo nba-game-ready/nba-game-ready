@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import android.content.Intent
 import android.net.Uri
-
+import com.example.nbagameready.R
 
 
 class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAdapter.ViewHolder>()
@@ -35,14 +35,14 @@ class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAd
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Your holder should contain and initialize a member variable
         // for any view that will be set as you render a row
-        val homeTeamImage: ImageView = itemView.findViewById(com.example.nbagameready.R.id.home_team_image)
-        val awayTeamImage: ImageView = itemView.findViewById(com.example.nbagameready.R.id.away_team_image)
-        val awayTeamName: TextView = itemView.findViewById(com.example.nbagameready.R.id.away_team)
-        val homeTeamName: TextView = itemView.findViewById(com.example.nbagameready.R.id.home_team)
+        val homeTeamImage: ImageView = itemView.findViewById(R.id.home_team_image)
+        val awayTeamImage: ImageView = itemView.findViewById(R.id.away_team_image)
+        val awayTeamName: TextView = itemView.findViewById(R.id.away_team)
+        val homeTeamName: TextView = itemView.findViewById(R.id.home_team)
         //val homeTeamScore: TextView = itemView.findViewById(com.example.nbagameready.R.id.home_team_score)
         //val awayTeamScore: TextView = itemView.findViewById(com.example.nbagameready.R.id.away_team_score)
-        val gameStartTime: TextView = itemView.findViewById(com.example.nbagameready.R.id.time)
-        val buyTicket: TextView = itemView.findViewById(com.example.nbagameready.R.id.BuyTix)
+        val gameStartTime: TextView = itemView.findViewById(R.id.time)
+        val buyTicket: TextView = itemView.findViewById(R.id.BuyTix)
 
 
         fun bindView(tomorrow: Games) {
