@@ -11,6 +11,9 @@ import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.R
 import com.example.nbagameready.network.Games
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.ViewHolder>()
 {
@@ -39,6 +42,7 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
         val homeTeamScore: TextView = itemView.findViewById(R.id.home_team_score)
         val awayTeamScore: TextView = itemView.findViewById(R.id.away_team_score)
         val liveImage: ImageView = itemView.findViewById(R.id.live_image)
+        val gameStartTime: TextView = itemView.findViewById(R.id.time)
         val info: TextView = itemView.findViewById(R.id.info)
         val buyTicket: TextView = itemView.findViewById(R.id.BuyTix)
 
@@ -61,6 +65,14 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
 
             Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).vTeam.logo ).into(awayTeamImage)
             Glide.with(itemView.context).load(today.api.games.get(bindingAdapterPosition).hTeam.logo ).into(homeTeamImage)
+
+            val starTime = fmtDateTime(today.api.games.get(bindingAdapterPosition).startTimeUTC)
+            if(starTime?.get(0).toString() == "0"){
+
+                gameStartTime.text = starTime?.substring(1,starTime.length)
+            } else{
+                gameStartTime.text = starTime
+            }
 
             val gameStatus = today.api.games.get(bindingAdapterPosition).statusGame
             when (gameStatus) {
@@ -87,12 +99,23 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
                 val intent = Intent()
                 intent.action = Intent.ACTION_VIEW
                 intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                intent.data = Uri.parse("https://www.stubhub.com/nba-tickets/grouping/115/")
+                intent.data = Uri.parse("https://www.stanza.co/api/schedules/nba-bulls/nba-bulls.ics")
                 itemView.context.startActivity(intent)
             }
 
 
         }
+    }
+    fun fmtDateTime(datetime: String): String? {
+        val inDF: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+        inDF.timeZone = TimeZone.getTimeZone("UTC")
+
+        val aDate = inDF.parse(datetime)
+
+        val outDF: DateFormat = SimpleDateFormat("hh:mm a")
+        outDF.timeZone = TimeZone.getDefault()
+
+        return outDF.format(aDate)
     }
 
     override fun getItemCount(): Int {
