@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -25,7 +27,7 @@
             android:hint="@string/home_team"
             android:textAlignment="center"
             android:textColor="@color/dark_grey"
-            android:textSize="18dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="visible" />
 
@@ -33,23 +35,27 @@
             android:id="@+id/home_team_image"
             android:layout_width="45dp"
             android:layout_height="45dp"
-           android:layout_below="@id/home_team"
+            android:layout_below="@id/home_team"
             android:layout_centerInParent="true"
-            android:visibility="visible">
-        </ImageView>
+            android:visibility="visible"></ImageView>
 
     </RelativeLayout>
 
     <TextView
-            android:id="@+id/home_team_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="20dp"
-            android:hint="score"
-            android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/info"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/home_team_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="24dp"
+        android:hint="score"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/info"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayoutHome" />
 
         <TextView
             android:id="@+id/network"
@@ -80,62 +86,77 @@
             android:hint="away_team"
             android:textAlignment="center"
             android:textColor="@color/dark_grey"
-            android:textSize="18dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="visible" />
 
-            <ImageView
-                android:id="@+id/away_team_image"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_below="@id/away_team"
-                android:layout_centerInParent="true"
-                android:visibility="visible">
-            </ImageView>
+        <ImageView
+            android:id="@+id/away_team_image"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/away_team"
+            android:layout_centerInParent="true"
+            android:visibility="visible"></ImageView>
 
-        </RelativeLayout>
+    </RelativeLayout>
 
-        <TextView
-            android:id="@+id/away_team_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="48dp"
+    <TextView
+        android:id="@+id/away_team_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
 
-            android:hint="score"
-            app:layout_constraintStart_toEndOf="@+id/info"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="24dp"
+        android:hint="score"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayoutAway"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toEndOf="@+id/info" />
 
-        <TextView
-            android:id="@+id/BuyTix"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="BuyTix"
-            android:textColor="@color/dark_orange"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+    <TextView
+        android:id="@+id/BuyTix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Buy Tickets"
+        android:textColor="@color/dark_orange"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginBottom="12dp"
         android:hint="Q2 - 08:17"
-        app:layout_constraintBottom_toTopOf="@+id/time"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayoutAway"
+        app:layout_constraintStart_toEndOf="@+id/relativeLayoutHome"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:hint="Game Time"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/BuyTix" />
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayoutAway"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/relativeLayoutHome"
+        app:layout_constraintTop_toTopOf="@+id/live_image"
+        app:layout_constraintVertical_bias="0.535" />
 
     <ImageView
         android:id="@+id/live_image"
@@ -147,15 +168,7 @@
         app:layout_constraintBottom_toTopOf="@id/info"
         app:layout_constraintStart_toEndOf="@+id/relativeLayoutHome" />
 
-    <View
-            android:id="@+id/divider"
-            android:layout_width="409dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="116dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
