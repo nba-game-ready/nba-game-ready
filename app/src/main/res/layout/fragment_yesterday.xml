@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -134,8 +132,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="393dp"
-        android:layout_height="523dp"
+        android:layout_width="390dp"
+        android:layout_height="557dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
@@ -145,9 +143,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout_bottom"
-        android:layout_width="270dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="199dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="100sp"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -156,67 +154,33 @@
             android:id="@+id/get_tweet_alert"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/get_your"
+            android:text="    See live tweets here!"
             android:textColor="@color/dark_grey"
             android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/linearLayout_bottom"
-            app:layout_constraintEnd_toStartOf="@id/twitter" />
-
-        <TextView
-            android:id="@+id/tweet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/tweet"
-            android:textColor="#0091EA"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/linearLayout_bottom"
-            app:layout_constraintStart_toEndOf="@id/get_tweet_alert" />
-
-        <TextView
-            android:id="@+id/twitter_alert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/alerts_here"
-            android:textColor="@color/dark_grey"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/linearLayout_bottom"
-            app:layout_constraintStart_toEndOf="@id/twitter" />
-
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="681dp" />
 
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/twitter_tweets"
-        android:layout_width="50dp"
+        android:layout_width="56dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/twitter_logo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/linearLayout_bottom"
-        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+        app:layout_constraintStart_toEndOf="@+id/linearLayout_bottom" />
 
     <TextView
         android:id="@+id/noGamesYesterday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No Available Games Yesterday"
-        android:textSize="20sp"
-        android:visibility="invisible"
+        android:layout_marginBottom="248dp"
+        android:text="No Available Games for Yesterday!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.593" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
