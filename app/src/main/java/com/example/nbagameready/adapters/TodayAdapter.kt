@@ -96,6 +96,8 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
                 else -> {
                     liveImage.visibility = View.VISIBLE
                     info.visibility = View.VISIBLE
+                    gameStartTime.visibility = View.INVISIBLE
+
                 }
             }
 
