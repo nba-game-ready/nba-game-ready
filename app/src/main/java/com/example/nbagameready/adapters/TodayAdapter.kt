@@ -105,7 +105,7 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
                 val intent = Intent()
                 intent.action = Intent.ACTION_VIEW
                 intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                intent.data = Uri.parse("https://www.stanza.co/api/schedules/nba-bulls/nba-bulls.ics")
+                intent.data = Uri.parse("https://www.stubhub.com/nba-tickets/grouping/115/")
                 itemView.context.startActivity(intent)
             }
 
