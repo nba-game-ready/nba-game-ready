@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -69,6 +70,17 @@ class TomorrowFragment : Fragment() {
             startActivity(intent)
         }
 
+    }
+    override fun onResume() {
+        super.onResume()
+        animateGlobe()
+
+
+    }
+    private fun animateGlobe() {
+        val rotate = AnimationUtils.loadAnimation(context, R.anim.rotate_animation)
+
+        binding.ballBounce.animation = rotate
     }
 
 

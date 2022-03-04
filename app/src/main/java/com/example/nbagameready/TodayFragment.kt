@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -78,6 +80,19 @@ class TodayFragment : Fragment() {
         }
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        animateGlobe()
+
+
+    }
+    private fun animateGlobe() {
+        val rotate = AnimationUtils.loadAnimation(context, R.anim.rotate_animation)
+
+        binding.ballBounce.animation = rotate
+    }
+
 
 
     private fun getNBAGameResponse() {
