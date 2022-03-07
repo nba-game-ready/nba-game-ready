@@ -101,7 +101,7 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
 
                 }
             }
-
+            //intent to buy tickets on click
             buyTicket.setOnClickListener{
                 val intent = Intent()
                 intent.action = Intent.ACTION_VIEW
@@ -110,13 +110,11 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
                 itemView.context.startActivity(intent)
             }
 
-
-
-
-
-
         }
     }
+
+    //formatting the time and date to users local time and date
+    //since the api nba is in UTC
     fun fmtDateTime(datetime: String): String? {
         val inDF: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
         inDF.timeZone = TimeZone.getTimeZone("UTC")
