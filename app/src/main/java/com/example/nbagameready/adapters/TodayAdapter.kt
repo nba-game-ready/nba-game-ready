@@ -17,6 +17,7 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.ViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -100,22 +101,20 @@ class TodayAdapter(private val game: Games) : RecyclerView.Adapter<TodayAdapter.
 
                 }
             }
-
+            //intent to buy tickets on click
             buyTicket.setOnClickListener{
                 val intent = Intent()
                 intent.action = Intent.ACTION_VIEW
                 intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                intent.data = Uri.parse("https://www.stanza.co/api/schedules/nba-bulls/nba-bulls.ics")
+                intent.data = Uri.parse("https://www.stubhub.com/nba-tickets/grouping/115/")
                 itemView.context.startActivity(intent)
             }
 
-
-
-
-
-
         }
     }
+
+    //formatting the time and date to users local time and date
+    //since the api nba is in UTC
     fun fmtDateTime(datetime: String): String? {
         val inDF: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
         inDF.timeZone = TimeZone.getTimeZone("UTC")
