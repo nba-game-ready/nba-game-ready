@@ -11,7 +11,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.ImageView
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,10 +24,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
-import kotlin.time.Duration.Companion.days
 
 class TodayFragment : Fragment() {
     /***
@@ -41,6 +40,7 @@ class TodayFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var date: String
     private lateinit var ai: ApplicationInfo
+    private val viewModel: SharedViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -71,7 +71,7 @@ class TodayFragment : Fragment() {
         }
 
         // Sends user to twitter nba live tweets
-        binding.twitterTweets.setOnClickListener{
+        binding.twitterTweets.setOnClickListener {
             val intent = Intent()
             intent.action = Intent.ACTION_VIEW
             intent.addCategory(Intent.CATEGORY_BROWSABLE)
@@ -87,6 +87,7 @@ class TodayFragment : Fragment() {
 
 
     }
+
     private fun animateGlobe() {
         val rotate = AnimationUtils.loadAnimation(context, R.anim.rotate_animation)
 
@@ -94,79 +95,123 @@ class TodayFragment : Fragment() {
     }
 
 
-
     private fun getNBAGameResponse() {
 
-        val date = SimpleDateFormat("yyyy-MM-dd").format(
-            System.currentTimeMillis()
-        )
+//        val date = SimpleDateFormat("yyyy-MM-dd").format(
+//            System.currentTimeMillis()
+//        )
+//
+//        val sdf = SimpleDateFormat("yyyy-MM-dd")
+//        val c = Calendar.getInstance()
+//        //Setting the date to the given date
+//        c.time = sdf.parse(date)
+//
+//
+//        c.add(Calendar.DAY_OF_MONTH, 1)
+//        val newDate = sdf.format(c.time)
+//
+//
+//        ai = context?.packageManager
+//            ?.getApplicationInfo(requireContext().packageName, PackageManager.GET_META_DATA)!!
+//
+//        val value = ai.metaData["keyValue"]
+//
+//        val key = value.toString()
+//        val call =
+//            NbaApi.retrofitService.getGames(newDate, key)
 
-        val sdf = SimpleDateFormat("yyyy-MM-dd")
-        val c = Calendar.getInstance()
-        //Setting the date to the given date
-        c.time = sdf.parse(date)
+        viewModel.apiResponse.observe(viewLifecycleOwner) { response ->
+            response.enqueue(object : Callback<Games> {
+                override fun onResponse(call: Call<Games>, response: Response<Games>) {
+                    if (response.isSuccessful) {
+                        if (response.body()?.api?.games?.size == 0) {
+                            binding.noGamesToday.visibility = View.VISIBLE
+                            binding.recyclerview.visibility = View.INVISIBLE
 
-        c.add(Calendar.DAY_OF_MONTH, 1)
-        val newDate = sdf.format(c.time)
+                        } else {
+                            binding.noGamesToday.visibility = View.INVISIBLE
+                            binding.recyclerview.visibility = View.VISIBLE
+                            recyclerView.apply {
+                                recyclerView.layoutManager = LinearLayoutManager(context)
+                                adapter = response.body()?.let { TodayAdapter(it) }
+                                recyclerView.adapter = adapter
 
+                            }
+                        }
 
-        ai = context?.packageManager
-            ?.getApplicationInfo(requireContext().packageName, PackageManager.GET_META_DATA)!!
-
-        val value = ai.metaData["keyValue"]
-
-        val key = value.toString()
-        val call =
-            NbaApi.retrofitService.getGames(newDate, key)
-
-        call.enqueue(object : Callback<Games> {
-
-            override fun onFailure(call: Call<Games>, t: Throwable) {
-
-                Log.e("MainActivity", "Failed to get games", t)
-
-            }
-
-            override fun onResponse(
-
-                call: Call<Games>,
-
-                response: Response<Games>
-
-            ) {
-                if (response.isSuccessful) {
-                    if (response.body()?.api?.games?.size  == 0){
-                        binding.noGamesToday.visibility = View.VISIBLE
-                        binding.recyclerview.visibility = View.INVISIBLE
 
                     } else {
-                        binding.noGamesToday.visibility = View.INVISIBLE
-                        binding.recyclerview.visibility = View.VISIBLE
-                        recyclerView.apply {
-                            recyclerView.layoutManager = LinearLayoutManager(context)
-                            adapter = response.body()?.let { TodayAdapter(it) }
-                            recyclerView.adapter = adapter
 
-                        }
+                        Log.e(
+
+                            "MainActivity",
+
+                            "Failed to get games${response.errorBody()?.string() ?: ""}"
+                        )
+
                     }
-
-
-                } else {
-
-                    Log.e(
-
-                        "MainActivity",
-
-                        "Failed to get games${response.errorBody()?.string() ?: ""}"
-                    )
-
                 }
 
-            }
+                override fun onFailure(call: Call<Games>, t: Throwable) {
+                    Log.e("MainActivity", "Failed to get games", t)
+                }
+//
+//
+//
+//
+//
+//            call.enqueue(object : Callback<Games> {
+//
+//                override fun onFailure(call: Call<Games>, t: Throwable) {
+//
+//                    Log.e("MainActivity", "Failed to get games", t)
+//
+//                }
+//
+//                override fun onResponse(
+//
+//                    call: Call<Games>,
+//
+//                    response: Response<Games>
+//
+//                ) {
+//                    if (response.isSuccessful) {
+//                        if (response.body()?.api?.games?.size == 0) {
+//                            binding.noGamesToday.visibility = View.VISIBLE
+//                            binding.recyclerview.visibility = View.INVISIBLE
+//
+//                        } else {
+//                            binding.noGamesToday.visibility = View.INVISIBLE
+//                            binding.recyclerview.visibility = View.VISIBLE
+//                            recyclerView.apply {
+//                                recyclerView.layoutManager = LinearLayoutManager(context)
+//                                adapter = response.body()?.let { TodayAdapter(it) }
+//                                recyclerView.adapter = adapter
+//
+//                            }
+//                        }
+//
+//
+//                    } else {
+//
+//                        Log.e(
+//
+//                            "MainActivity",
+//
+//                            "Failed to get games${response.errorBody()?.string() ?: ""}"
+//                        )
+//
+//                    }
+//
+//                }
+//
+//            })
 
-        })
 
-
+            })
+        }
     }
 }
+
+
 
