@@ -34,4 +34,3 @@ class TodayViewModel(application: Application) : AndroidViewModel(application) {
 
 
 
-}
