@@ -121,7 +121,7 @@ class TodayFragment : Fragment() {
 //            NbaApi.retrofitService.getGames(newDate, key)
 
         viewModel.apiResponse.observe(viewLifecycleOwner) { response ->
-            response.enqueue(object : Callback<Games> {
+            response.clone().enqueue(object : Callback<Games> {
                 override fun onResponse(call: Call<Games>, response: Response<Games>) {
                     if (response.isSuccessful) {
                         if (response.body()?.api?.games?.size == 0) {
