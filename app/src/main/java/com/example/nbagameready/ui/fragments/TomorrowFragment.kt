@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.R
 import com.example.nbagameready.ui.adapters.TomorrowAdapter
 import com.example.nbagameready.databinding.FragmentTomorrowBinding
-import com.example.nbagameready.network.Games
+import com.example.nbagameready.network.nbaapi.Games
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

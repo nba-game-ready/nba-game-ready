@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import androidx.lifecycle.*
-import com.example.nbagameready.network.Games
+import com.example.nbagameready.network.nbaapi.Games
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import java.text.SimpleDateFormat

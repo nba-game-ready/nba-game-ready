@@ -1,4 +1,4 @@
-package com.example.nbagameready.network
+package com.example.nbagameready.network.nbaapi
 
 /***
  * Data class that represents the data in our app. These are the objects that should

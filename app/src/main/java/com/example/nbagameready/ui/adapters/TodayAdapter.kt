@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.R
-import com.example.nbagameready.network.Games
+import com.example.nbagameready.network.nbaapi.Games
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*

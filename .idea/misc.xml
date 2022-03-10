@@ -14,8 +14,12 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20263424518743667" />
         <entry key="app/src/main/res/layout/fragment_today.xml" value="0.2753623188405797" />
         <entry key="app/src/main/res/layout/fragment_tomorrow.xml" value="0.2753623188405797" />
+        <entry key="app/src/main/res/layout/fragment_twitter.xml" value="0.4973958333333333" />
         <entry key="app/src/main/res/layout/fragment_yesterday.xml" value="0.2753623188405797" />
         <entry key="app/src/main/res/layout/todays_list.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/tomorrows_list.xml" value="0.4973958333333333" />
+        <entry key="app/src/main/res/layout/twitter_list.xml" value="0.4973958333333333" />
+        <entry key="app/src/main/res/layout/yesterdays_list.xml" value="0.4973958333333333" />
       </map>
     </option>
   </component>

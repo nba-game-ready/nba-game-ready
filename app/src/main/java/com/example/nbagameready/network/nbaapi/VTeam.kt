@@ -1,4 +1,6 @@
-package com.example.nbagameready.network
+package com.example.nbagameready.network.nbaapi
+
+import com.example.nbagameready.network.nbaapi.ScoreX
 
 data class VTeam(
     val fullName: String,

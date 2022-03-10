@@ -1,4 +1,4 @@
-package com.example.nbagameready.network
+package com.example.nbagameready.network.nbaapi
 
 
 data class Game(
