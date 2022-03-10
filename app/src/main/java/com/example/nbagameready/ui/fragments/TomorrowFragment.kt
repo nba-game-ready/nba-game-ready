@@ -1,8 +1,7 @@
-package com.example.nbagameready
+package com.example.nbagameready.ui.fragments
 
 import android.content.Intent
 import androidx.fragment.app.Fragment
-import com.example.nbagameready.databinding.FragmentYesterdayBinding
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -15,7 +14,9 @@ import android.view.animation.AnimationUtils
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nbagameready.adapters.YesterdayAdapter
+import com.example.nbagameready.R
+import com.example.nbagameready.ui.adapters.TomorrowAdapter
+import com.example.nbagameready.databinding.FragmentTomorrowBinding
 import com.example.nbagameready.network.Games
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,12 +24,12 @@ import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
-class YesterdayFragment : Fragment() {
+class TomorrowFragment : Fragment() {
 
     companion object {
-        fun newInstance() = YesterdayFragment()
+        fun newInstance() = TomorrowFragment()
     }
-    private var _binding: FragmentYesterdayBinding? = null
+    private var _binding: FragmentTomorrowBinding? = null
     val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView
     private lateinit var currentDate: String
@@ -40,7 +41,7 @@ class YesterdayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentYesterdayBinding.inflate(inflater, container, false)
+        _binding = FragmentTomorrowBinding.inflate(inflater, container, false)
 
         return binding.root
 
@@ -54,12 +55,12 @@ class YesterdayFragment : Fragment() {
 
         getNBAGameResponse()
 
-        binding.todayButton.setOnClickListener {
-            findNavController().navigate(YesterdayFragmentDirections.actionYesterdayFragmentToTodayFragment())
+        binding.button.setOnClickListener {
+            findNavController().navigate(TomorrowFragmentDirections.actionTomorrowFragmentToYesterdayFragment())
         }
 
-        binding.tomorrowButton.setOnClickListener {
-            findNavController().navigate(YesterdayFragmentDirections.actionYesterdayFragmentToTomorrowFragment())
+        binding.button2.setOnClickListener {
+            findNavController().navigate(TomorrowFragmentDirections.actionTomorrowFragmentToTodayFragment())
         }
         binding.twitterTweets.setOnClickListener{
             val intent = Intent()
@@ -84,9 +85,18 @@ class YesterdayFragment : Fragment() {
 
 
     private fun getNBAGameResponse() {
-        currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(
-            Date()
+        val date = SimpleDateFormat("yyyy-MM-dd").format(
+            System.currentTimeMillis()
         )
+
+        val sdf = SimpleDateFormat("yyyy-MM-dd")
+        val c = Calendar.getInstance()
+        //Setting the date to the given date
+        c.time = sdf.parse(date)
+
+        c.add(Calendar.DAY_OF_MONTH, 2)
+        val newDate = sdf.format(c.time)
+
         ai = context?.packageManager
             ?.getApplicationInfo(requireContext().packageName, PackageManager.GET_META_DATA)!!
 
@@ -94,13 +104,13 @@ class YesterdayFragment : Fragment() {
 
         val key = value.toString()
         val call =
-            NbaApi.retrofitService.getGames(currentDate, key)
+            NbaApi.retrofitService.getGames(newDate, key)
 
         call.enqueue(object : Callback<Games> {
 
             override fun onFailure(call: Call<Games>, t: Throwable) {
 
-                Log.e("Yesterday Fragment", "Failed to get games", t)
+                Log.e("MainActivity", "Failed to get games", t)
 
             }
 
@@ -113,25 +123,25 @@ class YesterdayFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     if (response.body()?.api?.games?.size  == 0){
-                        binding.noGamesYesterday.visibility = View.VISIBLE
+                        binding.noGamesToday.visibility = View.VISIBLE
                         binding.recyclerview.visibility = View.INVISIBLE
 
                     } else {
-                        binding.noGamesYesterday.visibility = View.INVISIBLE
+                        binding.noGamesToday.visibility = View.INVISIBLE
                         binding.recyclerview.visibility = View.VISIBLE
                         recyclerView.apply {
                             recyclerView.layoutManager = LinearLayoutManager(context)
-                            adapter = response.body()?.let { YesterdayAdapter(it) }
+                            adapter = response.body()?.let { TomorrowAdapter(it) }
                             recyclerView.adapter = adapter
+
                         }
                     }
-
 
                 } else {
 
                     Log.e(
 
-                        "Yesterday Fragment",
+                        "MainActivity",
 
                         "Failed to get games${response.errorBody()?.string() ?: ""}"
                     )

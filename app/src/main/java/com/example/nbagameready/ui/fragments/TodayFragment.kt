@@ -1,8 +1,7 @@
-package com.example.nbagameready
+package com.example.nbagameready.ui.fragments
 
 import android.content.Intent
 import android.content.pm.ApplicationInfo
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -12,19 +11,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nbagameready.adapters.TodayAdapter
+import com.example.nbagameready.R
+import com.example.nbagameready.ui.adapters.TodayAdapter
 import com.example.nbagameready.databinding.FragmentTodayBinding
 import com.example.nbagameready.network.Games
+import com.example.nbagameready.viewmodels.TodayViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.SimpleDateFormat
-import java.util.*
 
 class TodayFragment : Fragment() {
     /***
@@ -40,7 +37,7 @@ class TodayFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var date: String
     private lateinit var ai: ApplicationInfo
-    private val viewModel: SharedViewModel by activityViewModels()
+    private val viewModel: TodayViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -119,6 +116,7 @@ class TodayFragment : Fragment() {
 //        val key = value.toString()
 //        val call =
 //            NbaApi.retrofitService.getGames(newDate, key)
+
 
         viewModel.apiResponse.observe(viewLifecycleOwner) { response ->
             response.clone().enqueue(object : Callback<Games> {

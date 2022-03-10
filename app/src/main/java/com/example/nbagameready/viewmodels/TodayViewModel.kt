@@ -1,21 +1,16 @@
-package com.example.nbagameready
+package com.example.nbagameready.viewmodels
 
 import android.app.Application
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.*
-import com.example.nbagameready.network.Game
 import com.example.nbagameready.network.Games
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import retrofit2.Call
 import java.text.SimpleDateFormat
 import java.util.*
-import javax.crypto.SecretKey
-import kotlin.coroutines.coroutineContext
 
-class SharedViewModel(application: Application) : AndroidViewModel(application) {
+class TodayViewModel(application: Application) : AndroidViewModel(application) {
     private val _apiResponse = MutableLiveData<Call<Games>>()
     val apiResponse: LiveData<Call<Games>> = _apiResponse
     val ai: ApplicationInfo = application.packageManager
@@ -23,13 +18,12 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
     val value = ai.metaData["keyValue"]
     val key = value.toString()
 
-
-
     init {
-        getGames()
+        getTodayGames()
     }
 
-    fun getGames() {
+
+    fun getTodayGames() {
         val date = SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis())
         val sdf = SimpleDateFormat("yyyy-MM-dd")
         val c = Calendar.getInstance()
@@ -41,6 +35,7 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
             _apiResponse.value = NbaApi.retrofitService.getGames(newDate, key)
         }
     }
+
 }
 
 

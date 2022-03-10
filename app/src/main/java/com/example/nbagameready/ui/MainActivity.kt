@@ -1,12 +1,10 @@
-package com.example.nbagameready
+package com.example.nbagameready.ui
 
 import android.os.Bundle
-import android.view.animation.AnimationUtils
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.nbagameready.R
 
 class MainActivity : AppCompatActivity() {
 

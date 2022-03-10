@@ -1,4 +1,4 @@
-package com.example.nbagameready.adapters
+package com.example.nbagameready.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
