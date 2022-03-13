@@ -144,8 +144,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout_bottom"
-        android:layout_width="162dp"
-        android:layout_height="27dp"
+        android:layout_width="199dp"
+        android:layout_height="28dp"
         android:layout_marginStart="100sp"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -155,7 +155,7 @@
             android:id="@+id/get_tweet_alert"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            android:text="    See live tweets!"
+            android:text="    See live tweets here!"
             android:textColor="@color/dark_grey"
             android:textSize="20sp"
             android:textStyle="italic"
@@ -166,20 +166,19 @@
 
     <ImageButton
         android:id="@+id/twitter_tweets"
-        android:layout_width="49dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="56dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/twitter_logo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout_bottom"/>
+        app:layout_constraintStart_toEndOf="@+id/linearLayout_bottom" />
 
     <TextView
         android:id="@+id/noGamesToday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="248dp"
-        android:text="No Available Games today!"
+        android:text="No Availabe Games today!"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
