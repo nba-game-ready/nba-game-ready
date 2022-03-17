@@ -41,6 +41,7 @@ class TwitterFragment : Fragment() {
         viewmodel.apiResponse.observe(viewLifecycleOwner) { response ->
             recyclerView.apply {
                 recyclerView.layoutManager = LinearLayoutManager(context)
+                adapter =
                 recyclerView.adapter = TwitterAdapter(response)
             }
         }
