@@ -42,8 +42,7 @@ private val retrofit = Retrofit.Builder()
 
 interface TwitterService {
     @GET("recent?query=nba")
-    fun getRecentTweets(@Header("Authorization") bearerToken: String,
-                        @Query("nba") nba: String) : Tweets
+    suspend fun getRecentTweets(@Header("Authorization") bearerToken: String) : Tweets
 
 }
 

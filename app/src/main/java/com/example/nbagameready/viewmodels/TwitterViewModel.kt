@@ -24,9 +24,8 @@ class TwitterViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun getNbaTweets() {
-        val nba = "nba"
         viewModelScope.launch {
-            _apiResponse.value = TwitterApi.retrofitService.getRecentTweets(token, nba)
+            _apiResponse.value = TwitterApi.retrofitService.getRecentTweets(token)
         }
     }
 }
