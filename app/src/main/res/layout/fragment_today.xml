@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange_shade"
-    tools:context=".ui.fragments.TodayFragment">
+    tools:context=".TodayFragment">
 
-    <ImageButton
+   <!-- <ImageButton
         android:id="@+id/home_icon"
         android:layout_width="54dp"
         android:layout_height="55dp"
@@ -15,7 +15,7 @@
         android:background="@drawable/ic_baseline_menu_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck, contentDescription" />
+        tools:ignore="SpeakableTextPresentCheck, contentDescription" />-->
 
     <TextView
         android:id="@+id/title_nba"
@@ -60,35 +60,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/profile_view"
         android:layout_width="55dp"
         android:layout_height="67dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_baseline_account_box_24"
-        tools:ignore="contentDescription"/>
-
-    <View
+        tools:ignore="contentDescription"/>-->
+    <!-- <View
         android:id="@+id/divider"
         android:layout_width="409dp"
         android:layout_height="1dp"
         android:layout_marginTop="60dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="360dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/linearLayout"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="4dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/recyclerview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/button"
@@ -101,7 +100,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:strokeColor="#fff3e0"
             app:strokeWidth="6dp"
-            tools:ignore="ButtonStyle"/>
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/button2"
@@ -115,7 +114,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/button"
             app:strokeColor="#FFFFFF"
-            tools:ignore="ButtonStyle"/>
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/button3"
@@ -128,24 +127,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="#fff3e0"
             app:strokeWidth="6dp"
-            tools:ignore="ButtonStyle"/>
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="398dp"
-        android:layout_height="546dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout_bottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.6" />
-
-    <LinearLayout
+    <!--<LinearLayout
         android:id="@+id/linearLayout_bottom"
-        android:layout_width="199dp"
-        android:layout_height="28dp"
+        android:layout_width="162dp"
+        android:layout_height="27dp"
         android:layout_marginStart="100sp"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -155,30 +143,41 @@
             android:id="@+id/get_tweet_alert"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            android:text="    See live tweets here!"
+            android:text="    See live tweets!"
             android:textColor="@color/dark_grey"
             android:textSize="20sp"
             android:textStyle="italic"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="681dp" />
 
-    </LinearLayout>
+    </LinearLayout> -->
 
     <ImageButton
         android:id="@+id/twitter_tweets"
-        android:layout_width="56dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="49dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/twitter_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="381dp"
+        android:layout_height="601dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout_bottom" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/noGamesToday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="248dp"
-        android:text="No Availabe Games today!"
+        android:text="No Available Games today!"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
