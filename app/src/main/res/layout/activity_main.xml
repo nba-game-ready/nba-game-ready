@@ -26,7 +26,7 @@
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_nav_view"
         app:backgroundTint="@color/dark_grey"
-        app:itemIconTint="@color/orange"
+        app:itemIconTint="@color/bottom_nav_selector"
         app:itemRippleColor="@color/white"
         app:itemTextColor="@color/white"
         />
