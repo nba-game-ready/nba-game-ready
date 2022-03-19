@@ -25,7 +25,7 @@ class TwitterViewModel(application: Application) : AndroidViewModel(application)
 
     fun getNbaTweets() {
         viewModelScope.launch {
-            _apiResponse.value = TwitterApi.retrofitService.getRecentTweets(token)
+            _apiResponse.value = TwitterApi.retrofitService.getRecentTweets("Bearer "+ token)
         }
     }
 }

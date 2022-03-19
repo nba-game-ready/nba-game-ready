@@ -61,8 +61,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="398dp"
-        android:layout_height="546dp"
+        android:layout_width="397dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
@@ -72,11 +74,11 @@
 
     <TextView
         android:id="@+id/get_tweet_alert"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:text="See live tweets!"
+        android:layout_width="188dp"
+        android:layout_height="40dp"
+        android:text="Live Tweets"
         android:textColor="@color/dark_grey"
-        android:textSize="20sp"
+        android:textSize="36sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -14,6 +14,7 @@ import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.twitter.com/2/tweets/search/"
 
+
 /***
 * Okhttp for network logging
 */
@@ -41,7 +42,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface TwitterService {
-    @GET("recent?query=nba")
+    @GET("recent?max_results=100&query=context%3A3.10029190505")
     suspend fun getRecentTweets(@Header("Authorization") bearerToken: String) : Tweets
 
 }
