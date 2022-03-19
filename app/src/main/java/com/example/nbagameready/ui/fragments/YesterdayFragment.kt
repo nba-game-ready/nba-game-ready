@@ -1,11 +1,8 @@
 package com.example.nbagameready.ui.fragments
 
-import android.content.Intent
+
 import androidx.fragment.app.Fragment
 import com.example.nbagameready.databinding.FragmentYesterdayBinding
-import android.content.pm.ApplicationInfo
-import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,20 +15,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.R
 import com.example.nbagameready.ui.adapters.YesterdayAdapter
-import com.example.nbagameready.network.Games
-import com.example.nbagameready.ui.adapters.TodayAdapter
+import com.example.nbagameready.network.nbaapi.Games
 import com.example.nbagameready.viewmodels.YesterdayViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.SimpleDateFormat
-import java.util.*
+
 
 class YesterdayFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = YesterdayFragment()
-    }
     private var _binding: FragmentYesterdayBinding? = null
     val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView

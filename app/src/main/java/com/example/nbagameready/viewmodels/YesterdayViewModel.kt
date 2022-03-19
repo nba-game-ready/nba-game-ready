@@ -7,7 +7,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.nbagameready.network.Games
+import com.example.nbagameready.network.nbaapi.Games
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import java.text.SimpleDateFormat
