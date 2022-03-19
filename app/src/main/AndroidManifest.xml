@@ -28,6 +28,10 @@
             android:name = "keyValue"
             android:value = "${KEY}"/>
 
+        <meta-data
+            android:name = "bearerToken"
+            android:value = "${TWITTER_BEARER}"/>
+
     </application>
 
     </manifest>

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_todayFragment_to_yesterdayFragment"
             app:destination="@id/yesterdayFragment" />
+        <action
+            android:id="@+id/action_todayFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment" />
     </fragment>
     <fragment
         android:id="@+id/tomorrowFragment"
@@ -28,6 +31,9 @@
         <action
             android:id="@+id/action_tomorrowFragment_to_todayFragment"
             app:destination="@id/todayFragment" />
+        <action
+            android:id="@+id/action_tomorrowFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment" />
     </fragment>
     <fragment
         android:id="@+id/yesterdayFragment"
@@ -39,6 +45,24 @@
             app:destination="@id/todayFragment" />
         <action
             android:id="@+id/action_yesterdayFragment_to_tomorrowFragment"
+            app:destination="@id/tomorrowFragment" />
+        <action
+            android:id="@+id/action_yesterdayFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/twitterFragment"
+        android:name="com.example.nbagameready.ui.fragments.TwitterFragment"
+        android:label="fragment_twitter"
+        tools:layout="@layout/fragment_twitter" >
+        <action
+            android:id="@+id/action_twitterFragment_to_todayFragment"
+            app:destination="@id/todayFragment" />
+        <action
+            android:id="@+id/action_twitterFragment_to_yesterdayFragment"
+            app:destination="@id/yesterdayFragment" />
+        <action
+            android:id="@+id/action_twitterFragment_to_tomorrowFragment"
             app:destination="@id/tomorrowFragment" />
     </fragment>
 </navigation>

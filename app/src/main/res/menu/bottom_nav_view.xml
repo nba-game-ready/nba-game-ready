@@ -14,7 +14,7 @@
         android:icon="@drawable/ic_baseline_favorite_border_24"/>
 
     <item
-        android:id="@+id/twitter"
+        android:id="@+id/twitterFragment"
         android:title="Live Tweets"
         android:icon="@drawable/twitter_logo"/>
 
