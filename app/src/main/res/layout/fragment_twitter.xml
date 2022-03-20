@@ -7,49 +7,6 @@
     android:background="@color/orange_shade"
     tools:context=".ui.fragments.TwitterFragment">
 
-    <TextView
-        android:id="@+id/title_nba"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/nba"
-        android:textAllCaps="true"
-        android:textColor="@color/dark_grey"
-        android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="contentDescription"/>
-
-    <ImageView
-        android:id="@+id/ball_bounce"
-        android:layout_width="38dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/ball2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="contentDescription" />
-
-
-    <TextView
-        android:id="@+id/title_game_ready"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="64dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/game_ready"
-        android:textAllCaps="true"
-        android:textColor="@color/dark_grey"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <View
         android:id="@+id/divider"
         android:layout_width="409dp"
@@ -69,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/get_tweet_alert"
+        app:layout_constraintTop_toBottomOf="@id/divider"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -82,6 +39,6 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ball_bounce" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

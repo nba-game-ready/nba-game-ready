@@ -60,15 +60,9 @@ class YesterdayFragment : Fragment() {
     
     override fun onResume() {
         super.onResume()
-        animateGlobe()
-
 
     }
-    private fun animateGlobe() {
-        val rotate = AnimationUtils.loadAnimation(context, R.anim.rotate_animation)
 
-        binding.ballBounce.animation = rotate
-    }
 
 
     private fun getNBAGameResponse() {

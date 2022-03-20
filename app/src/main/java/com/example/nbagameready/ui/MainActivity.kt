@@ -1,6 +1,8 @@
 package com.example.nbagameready.ui
 
 import android.os.Bundle
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -16,9 +18,20 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val bottomNavView = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomNavView.setupWithNavController(navController)
+    }
 
+    override fun onResume() {
+        super.onResume()
+        animateGlobe()
+    }
 
+    private fun animateGlobe() {
+        val rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_animation)
+        val rotatingBall = findViewById<ImageView>(R.id.ball_bounce)
 
+        rotatingBall.animation = rotate
     }
 
 }
+
+
