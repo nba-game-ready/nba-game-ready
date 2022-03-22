@@ -1,6 +1,5 @@
 # 🏀 NBA Game Ready 🏀
 
-## Website: https://nba-game-ready.github.io/nba-game-ready
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -104,7 +103,7 @@ MVVM Architecture: Model-View-ViewModel
 | `Sabur` | Networking - Images |
 
 ### Website
-https://nba-game-ready.github.io/nba-game-ready/
+ https://nba-game-ready.github.io/nba-game-ready
 
 
 Shikeya - Team Swish.
