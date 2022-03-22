@@ -106,18 +106,4 @@ MVVM Architecture: Model-View-ViewModel
  https://nba-game-ready.github.io/nba-game-ready
 
 
-Shikeya - Team Swish.
-Raven test
-
-Claire-Team Swish
-    
-Kieran - Team Swish
-    
-Yunis Khamis
-
-Added network
- User_Interface
-Shikeya & Claire
-=======
-RecyclerView branch added
 
