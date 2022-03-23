@@ -161,8 +161,8 @@
 
         <ImageView
             android:id="@+id/live_image"
-            android:layout_width="110dp"
-            android:layout_height="58dp"
+            android:layout_width="106dp"
+            android:layout_height="56dp"
             android:layout_marginTop="68dp"
             android:src="@drawable/live_logo"
             app:layout_constraintEnd_toEndOf="parent"

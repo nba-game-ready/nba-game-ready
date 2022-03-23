@@ -83,16 +83,16 @@
 
     </LinearLayout> -->
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="381dp"
-        android:layout_height="565dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="379dp"
+        android:layout_height="568dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <TextView
         android:id="@+id/noGamesYesterday"

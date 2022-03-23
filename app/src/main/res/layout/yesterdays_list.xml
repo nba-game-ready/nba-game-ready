@@ -107,30 +107,29 @@
             app:layout_constraintEnd_toEndOf="@+id/relativeLayoutAway" />
 
         <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="FINAL"
-        android:textColor="@color/dark_orange"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/relativeLayoutAway"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/relativeLayoutHome"
-        app:layout_constraintTop_toTopOf="parent" />
-
-       <!-- <TextView
-            android:id="@+id/dash"
+            android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="-"
-            android:textColor="@android:color/black"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/away_team_score"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toEndOf="@+id/home_team_score" />-->
+            android:layout_marginTop="32dp"
+            android:text="FINAL"
+            android:textColor="@color/dark_orange"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/relativeLayoutAway"
+            app:layout_constraintStart_toStartOf="@+id/relativeLayoutHome"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- <TextView
+             android:id="@+id/dash"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="16dp"
+             android:text="-"
+             android:textColor="@android:color/black"
+             android:textSize="34sp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toStartOf="@+id/away_team_score"
+             app:layout_constraintHorizontal_bias="0.25"
+             app:layout_constraintStart_toEndOf="@+id/home_team_score" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
