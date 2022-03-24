@@ -82,6 +82,7 @@ class YesterdayFragment : Fragment() {
                                 adapter = response.body()?.let { YesterdayAdapter(it) }
                                 recyclerView.adapter = adapter
 
+
                             }
                         }
 

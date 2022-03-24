@@ -1,5 +1,6 @@
 package com.example.nbagameready.ui.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,6 +42,7 @@ class YesterdayAdapter(private val game: Games) : RecyclerView.Adapter<Yesterday
             homeTeamName.text = yesterday.api.games.get(bindingAdapterPosition).hTeam.nickName
             Glide.with(itemView.context).load(yesterday.api.games.get(bindingAdapterPosition).vTeam.logo ).into(awayTeamImage)
             Glide.with(itemView.context).load(yesterday.api.games.get(bindingAdapterPosition).hTeam.logo ).into(homeTeamImage)
+            Log.d("Kieran", yesterday.api.games.get(bindingAdapterPosition).vTeam.score.toString())
 
         }
     }

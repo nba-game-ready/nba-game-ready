@@ -28,12 +28,13 @@ class TomorrowViewModel(application: Application) : AndroidViewModel(application
 
 
     fun getTodayGames() {
-        val date = SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis())
-        val sdf = SimpleDateFormat("yyyy-MM-dd")
+        val date = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(System.currentTimeMillis())
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         val c = Calendar.getInstance()
         //Setting the date to the given date
         c.time = sdf.parse(date)
-        c.add(Calendar.DAY_OF_MONTH, 2)
+
+        c.add(Calendar.DAY_OF_WEEK, 2)
         val newDate = sdf.format(c.time)
         viewModelScope.launch {
             _apiResponse.value = NbaApi.retrofitService.getGames(newDate, key)
