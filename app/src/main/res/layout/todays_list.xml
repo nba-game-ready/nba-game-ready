@@ -19,7 +19,7 @@
 
         <RelativeLayout
             android:id="@+id/relativeLayoutHome"
-            android:layout_width="117dp"
+            android:layout_width="140dp"
             android:layout_height="116dp"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,22 +49,9 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/network"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginBottom="8dp"
-            android:hint="Network:ABC"
-            android:textColor="@color/dark_grey"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
         <RelativeLayout
             android:id="@+id/relativeLayoutAway"
-            android:layout_width="119dp"
+            android:layout_width="140dp"
             android:layout_height="118dp"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -110,13 +97,14 @@
             android:id="@id/time"
             android:layout_width="78dp"
             android:layout_height="25dp"
-            android:layout_marginStart="164dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="12dp"
             android:hint="Game Time"
             android:textColor="@color/dark_grey"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
@@ -160,11 +148,12 @@
 
         <ImageView
             android:id="@+id/live_image"
-            android:layout_width="110dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="148dp"
-            android:layout_marginTop="64dp"
+            android:layout_width="106dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="68dp"
             android:src="@drawable/live_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
