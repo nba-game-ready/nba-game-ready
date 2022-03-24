@@ -19,7 +19,7 @@
 
         <RelativeLayout
             android:id="@+id/relativeLayoutHome"
-            android:layout_width="117dp"
+            android:layout_width="140dp"
             android:layout_height="116dp"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,22 +49,9 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/network"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginBottom="8dp"
-            android:hint="Network:ABC"
-            android:textColor="@color/dark_grey"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
         <RelativeLayout
             android:id="@+id/relativeLayoutAway"
-            android:layout_width="119dp"
+            android:layout_width="140dp"
             android:layout_height="118dp"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"

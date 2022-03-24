@@ -7,25 +7,6 @@
     android:background="@color/orange_shade"
     tools:context=".ui.fragments.TodayFragment">
 
-    <!-- <ImageButton
-         android:id="@+id/home_icon"
-         android:layout_width="54dp"
-         android:layout_height="55dp"
-         android:layout_marginTop="4dp"
-         android:background="@drawable/ic_baseline_menu_24"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-         tools:ignore="SpeakableTextPresentCheck, contentDescription" />-->
-
-    <!-- <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="60dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
-
 
     <TextView
         android:id="@+id/favorite_teams"
