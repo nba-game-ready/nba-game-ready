@@ -80,10 +80,16 @@ NBA Game Ready is an app that displays all live, upcoming, and the previous day'
 * Buy ticket button -> Opens browser to ticketing website
 
 ## Wireframes
-
-<img src="wireframe.jpeg" width=400>
+<img src="wireframes2.jpg" title='Wire Frames' width='' />
 
 ## Prototypes
+### First Prototype
+<img src="pt1.jpg" title='Prototype 1' width='' />
+
+### Second Prototype
+<img src="pt2.jpg" title='Prototype 2' width='' />
+
+### Final Prototype
 
 
 ## Networking
