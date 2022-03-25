@@ -42,7 +42,8 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface TwitterService {
-    @GET("recent?max_results=100&query=context%3A3.10029190505")
+    @GET("recent?expansions=author_id&user.fields=description,profile_image_url&max_results=100&query=context%3A3.10029190505&tweet.fields=created_at,author_id")
+    //"recent?expansions=author_id&user.fields=description&max_results=100&query=context%3A3.10029190505&tweet.fields=created_at,author_id"
     suspend fun getRecentTweets(@Header("Authorization") bearerToken: String) : Tweets
 
 }
