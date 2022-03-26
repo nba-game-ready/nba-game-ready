@@ -2,8 +2,8 @@ package com.example.nbagameready.database
 
 import androidx.room.TypeConverter
 import com.example.nbagameready.network.nbaapi.Api
-import com.example.nbagameready.network.nbaapi.Leagues
-import com.example.nbagameready.network.nbaapi.Standard
+import com.example.nbagameready.network.nbaapi_teams.Leagues
+import com.example.nbagameready.network.nbaapi_teams.Standard
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

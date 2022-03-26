@@ -1,7 +1,7 @@
 
 
 import com.example.nbagameready.network.nbaapi.Games
-import com.example.nbagameready.network.nbaapi.Teams
+import com.example.nbagameready.network.nbaapi_teams.Teams
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient

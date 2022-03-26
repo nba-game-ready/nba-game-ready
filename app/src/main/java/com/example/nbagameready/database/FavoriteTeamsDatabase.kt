@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.nbagameready.network.nbaapi.Team
+import com.example.nbagameready.network.nbaapi_teams.Team
 
 @Database(entities = [Team::class], version = 2, exportSchema = false)
 @TypeConverters(LeaguesConverters::class)

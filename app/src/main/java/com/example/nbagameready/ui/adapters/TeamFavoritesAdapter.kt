@@ -1,13 +1,14 @@
 package com.example.nbagameready.ui.adapters
 
+import android.app.Activity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -39,7 +40,7 @@ class TeamFavoritesAdapter(team: Teams) : RecyclerView.Adapter<TeamFavoritesAdap
 
         private val homeTeamImage: ImageView = itemView.findViewById(R.id.home_team_image)
         private val homeTeamName: TextView = itemView.findViewById(R.id.home_team)
-        private val favoriteButton: CheckBox = itemView.findViewById(R.id.imageButton)
+        private val favoriteButton: ImageButton = itemView.findViewById(R.id.imageButton)
 
 
         fun bindView() {
@@ -49,7 +50,7 @@ class TeamFavoritesAdapter(team: Teams) : RecyclerView.Adapter<TeamFavoritesAdap
             Glide.with(itemView.context).load(todayFilter?.get(bindingAdapterPosition)?.logo)
                 .into(homeTeamImage)
 
-            viewModel = ViewModelProviders.of((itemView.context as MainActivity?)!!)[FavoriteTeamsViewModel::class.java]
+            viewModel = ViewModelProvider(itemView.context).get(FavoriteTeamsViewModel::class.java)
 
             val teamId = todayFilter?.get(bindingAdapterPosition)?.teamId?.toInt()
             val teamFavorited = if (teamId != null) {
@@ -58,12 +59,12 @@ class TeamFavoritesAdapter(team: Teams) : RecyclerView.Adapter<TeamFavoritesAdap
 
             // Check the team's box if the ID is in database
             if (teamFavorited) {
-                favoriteButton.isChecked = true
+                favoriteButton.isSelected = true
             }
 
             favoriteButton.setOnClickListener {
 
-                if (!favoriteButton.isChecked) {
+                if (!favoriteButton.isSelected) {
 
                     todayFilter?.get(bindingAdapterPosition)
                         ?.let { it1 -> it1.teamId?.let { it2 -> viewModel.deleteTeam(it2.toInt()) } }
@@ -73,7 +74,7 @@ class TeamFavoritesAdapter(team: Teams) : RecyclerView.Adapter<TeamFavoritesAdap
                         Toast.LENGTH_SHORT
                     ).show()
 
-                    Log.i("Yunis",favoriteButton.isChecked.toString())
+                    Log.i("Yunis",favoriteButton.isSelected.toString())
 
                 }
 
@@ -88,7 +89,7 @@ class TeamFavoritesAdapter(team: Teams) : RecyclerView.Adapter<TeamFavoritesAdap
                             Toast.LENGTH_SHORT
                         ).show()
 
-                        Log.i("Yunis","checked: " +favoriteButton.isChecked.toString() + "\nid: " + bindingAdapterPosition)
+                        Log.i("Yunis","checked: " +favoriteButton.isSelected.toString() + "\nid: " + bindingAdapterPosition)
 
                     } else {
                         Toast.makeText(itemView.context,"Team is already favorited", Toast.LENGTH_SHORT).show()

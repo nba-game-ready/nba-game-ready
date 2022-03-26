@@ -1,7 +1,8 @@
 package com.example.nbagameready.database
 
 import androidx.room.*
-import com.example.nbagameready.network.nbaapi.Team
+import com.example.nbagameready.network.nbaapi_teams.Team
+
 import kotlinx.coroutines.flow.Flow
 
 @Dao

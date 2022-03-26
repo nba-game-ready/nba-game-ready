@@ -19,6 +19,12 @@
         <action
             android:id="@+id/action_todayFragment_to_twitterFragment"
             app:destination="@id/twitterFragment" />
+        <action
+            android:id="@+id/action_todayFragment_to_favoriteTeamsFragment2"
+            app:destination="@id/favoriteTeamsFragment2" />
+        <action
+            android:id="@+id/action_todayFragment_to_favoriteTeamsFragment22"
+            app:destination="@id/favoriteTeamsFragment2" />
     </fragment>
     <fragment
         android:id="@+id/tomorrowFragment"
@@ -34,6 +40,12 @@
         <action
             android:id="@+id/action_tomorrowFragment_to_twitterFragment"
             app:destination="@id/twitterFragment" />
+        <action
+            android:id="@+id/action_tomorrowFragment_to_favoriteTeamsFragment2"
+            app:destination="@id/favoriteTeamsFragment2" />
+        <action
+            android:id="@+id/action_tomorrowFragment_to_favoriteTeamsFragment22"
+            app:destination="@id/favoriteTeamsFragment2" />
     </fragment>
     <fragment
         android:id="@+id/yesterdayFragment"
@@ -49,6 +61,12 @@
         <action
             android:id="@+id/action_yesterdayFragment_to_twitterFragment"
             app:destination="@id/twitterFragment" />
+        <action
+            android:id="@+id/action_yesterdayFragment_to_favoriteTeamsFragment2"
+            app:destination="@id/favoriteTeamsFragment2" />
+        <action
+            android:id="@+id/action_yesterdayFragment_to_favoriteTeamsFragment22"
+            app:destination="@id/favoriteTeamsFragment2" />
     </fragment>
     <fragment
         android:id="@+id/twitterFragment"
@@ -63,6 +81,33 @@
             app:destination="@id/yesterdayFragment" />
         <action
             android:id="@+id/action_twitterFragment_to_tomorrowFragment"
+            app:destination="@id/tomorrowFragment" />
+        <action
+            android:id="@+id/action_twitterFragment_to_favoriteTeamsFragment2"
+            app:destination="@id/favoriteTeamsFragment2" />
+        <action
+            android:id="@+id/action_twitterFragment_to_favoriteTeamsFragment22"
+            app:destination="@id/favoriteTeamsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteTeamsFragment2"
+        android:name="com.example.nbagameready.ui.fragments.FavoriteTeamsFragment"
+        android:label="fragment_favorite_teams"
+        tools:layout="@layout/fragment_favorite_teams" >
+        <action
+            android:id="@+id/action_favoriteTeamsFragment2_to_yesterdayFragment"
+            app:destination="@id/yesterdayFragment" />
+        <action
+            android:id="@+id/action_favoriteTeamsFragment2_to_tomorrowFragment"
+            app:destination="@id/tomorrowFragment" />
+        <action
+            android:id="@+id/action_favoriteTeamsFragment2_to_todayFragment"
+            app:destination="@id/todayFragment" />
+        <action
+            android:id="@+id/action_favoriteTeamsFragment2_to_twitterFragment"
+            app:destination="@id/twitterFragment" />
+        <action
+            android:id="@+id/action_favoriteTeamsFragment2_to_tomorrowFragment2"
             app:destination="@id/tomorrowFragment" />
     </fragment>
 </navigation>

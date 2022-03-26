@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nbagameready.Application
 import com.example.nbagameready.databinding.FragmentTodayBinding
 import com.example.nbagameready.network.nbaapi_teams.Teams
 import com.example.nbagameready.ui.adapters.TeamFavoritesAdapter
@@ -27,7 +29,10 @@ class FavoriteTeamsFragment : Fragment() {
     private var _binding: FragmentTodayBinding? = null
     val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView
-    private val viewModel: FavoriteTeamsViewModel by activityViewModels()
+    private val viewModel: FavoriteTeamsViewModel by viewModels {
+        FavoriteTeamsViewModel.MainViewModelFactory((activity?.application as Application).database.favoriteTeamDao(),
+            activity!!.application)
+    }
 
 
     override fun onCreateView(

@@ -26,7 +26,7 @@ class TwitterFragment : Fragment() {
     private var _binding: FragmentTwitterBinding? = null
     val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView
-    lateinit var swipeContainer: SwipeRefreshLayout
+    //lateinit var swipeContainer: SwipeRefreshLayout
     private val viewmodel: TwitterViewModel by activityViewModels()
 
 
@@ -53,12 +53,12 @@ class TwitterFragment : Fragment() {
 
 
         // Configure the refreshing colors
-        swipeContainer.setColorSchemeResources(
-            android.R.color.holo_blue_bright,
-            android.R.color.holo_green_light,
-            android.R.color.holo_orange_light,
-            android.R.color.holo_red_light
-        )
+//        swipeContainer.setColorSchemeResources(
+//            android.R.color.holo_blue_bright,
+//            android.R.color.holo_green_light,
+//            android.R.color.holo_orange_light,
+//            android.R.color.holo_red_light
+//        )
 
 
     }
