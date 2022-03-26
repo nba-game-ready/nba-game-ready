@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/todayFragment">
+
+    <fragment
+        android:id="@+id/todayFragment"
+        android:name="com.example.nbagameready.ui.fragments.TodayFragment"
+        android:label="fragment_today"
+        tools:layout="@layout/fragment_today" >
+        <action
+            android:id="@+id/action_todayFragment_to_tomorrowFragment"
+            app:destination="@id/tomorrowFragment" />
+        <action
+            android:id="@+id/action_todayFragment_to_yesterdayFragment"
+            app:destination="@id/yesterdayFragment" />
+        <action
+            android:id="@+id/action_todayFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tomorrowFragment"
+        android:name="com.example.nbagameready.ui.fragments.TomorrowFragment"
+        android:label="fragment_tomorrow"
+        tools:layout="@layout/fragment_tomorrow" >
+        <action
+            android:id="@+id/action_tomorrowFragment_to_yesterdayFragment"
+            app:destination="@id/yesterdayFragment" />
+        <action
+            android:id="@+id/action_tomorrowFragment_to_todayFragment"
+            app:destination="@id/todayFragment" />
+        <action
+            android:id="@+id/action_tomorrowFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/yesterdayFragment"
+        android:name="com.example.nbagameready.ui.fragments.YesterdayFragment"
+        android:label="fragment_yesterday"
+        tools:layout="@layout/fragment_yesterday" >
+        <action
+            android:id="@+id/action_yesterdayFragment_to_todayFragment"
+            app:destination="@id/todayFragment" />
+        <action
+            android:id="@+id/action_yesterdayFragment_to_tomorrowFragment"
+            app:destination="@id/tomorrowFragment" />
+        <action
+            android:id="@+id/action_yesterdayFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/twitterFragment"
+        android:name="com.example.nbagameready.ui.fragments.TwitterFragment"
+        android:label="fragment_twitter"
+        tools:layout="@layout/fragment_twitter" >
+        <action
+            android:id="@+id/action_twitterFragment_to_todayFragment"
+            app:destination="@id/todayFragment" />
+        <action
+            android:id="@+id/action_twitterFragment_to_yesterdayFragment"
+            app:destination="@id/yesterdayFragment" />
+        <action
+            android:id="@+id/action_twitterFragment_to_tomorrowFragment"
+            app:destination="@id/tomorrowFragment" />
+    </fragment>
+</navigation>

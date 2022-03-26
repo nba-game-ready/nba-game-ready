@@ -1,30 +1,26 @@
 # 🏀 NBA Game Ready 🏀
 
-
 ## Table of Contents
 1. [Overview](#Overview)
 2. [Product Spec](#Product-Spec)
 3. [Wireframes](#Wireframes)
-4. [Prototypes](#Prototypes)
-5. [Networking](#Networking)
-6. [Architecture](#Architecture)
-7. [Responsibilities](#Responsibilities)
-8. [Video Walkthrough](#Video-Walkthrough)
-9. [Website](#Website)
+4. [Networking](#Networking)
+5. [Architecture](#Architecture)
+6. [Responsibilities](#Responsibilities)
 
 ## Overview
 ### Description
 
-NBA Game Ready is an app that displays all live, upcoming, and the previous day's NBA games, in a format that's quick and easy to read. Users can also keep up with the games that are playing through the live tweets in app. We used API NBA to create this app.
+Displays all live and upcoming NBA games, including live scores and television networks, in a format that's quick and easy to read.
 
 ### App Evaluation
 
 - **Category:** Sports
-- **Mobile:** This app is primarily developed for mobile. Functionality wouldn't be limited to mobile devices, however mobile version could potentially have more features.
-- **Story:** Allows users to answer the question "Who's playing tonight?"
+- **Mobile:** This app would be primarily developed for mobile. Functionality wouldn't be limited to mobile devices, however mobile version could potentially have more features.
+- **Story:** Pulls all NBA game information to display in a list on the main screen.
 - **Market:** Ages 4+
 - **Habit:** This app could be used as often as needed during the NBA season.
-- **Scope:** First, we are displaying live game updates.  Eventually the app could evolve to displaying team and player stats from a user search along with television networks of games airing.
+- **Scope:** First, we are displaying live game updates along with the television networks for televised games.  Eventually the app could evolve to displaying team and player stats from a user search.
 
 ## Product Spec
 
@@ -32,43 +28,36 @@ NBA Game Ready is an app that displays all live, upcoming, and the previous day'
 
 **Required Must-have Stories**
 
-- [X] User launches app to see a list of all NBA games for the current day
-- [X] User sees live updates on scores for each game
-- [X] User can click on a game and go to website to purchase tickets
-- [X] User can add team to their favorites list
-- [X] User can see most recent tweets about current live games
+* User launches app to see a list of all NBA games for the current day
+* User wants to know which games are televised and what channels those games are on
+* User clicks on the network of the televised games and is taken to the network website
+* User sees live updates on scores for each game
+* User can click on a game and go to website to purchase tickets
 
 **Optional Nice-to-have Stories**
 
-- [ ] User clicks on a game listed and can see team and player stats
-- [ ] User can see if they are close to a stadium in map view
-- [ ] User wants to know which games are televised and what channels those games are on
-- [ ] User clicks on the network of the televised games and is taken to the network website
-- [ ] User can set reminders and notifications for games
-- [X] User can get notified any time their favorite teams are playing
-- [ ] User has an option to create an account and profile to have quick access to favorites, saved games, and setup notifications
-- [ ] User has accessibility options
-- [ ] User can change text to multiple different languages
-
+* User clicks on a game listed and can see team and player stats
+* User can see if they are close to a stadium in map view
+* User can search for a team or player and add them to their favorites list
+* User can set reminders and notifications for games
+* User has an option to create an account and profile to have quick access to favorites, saved games, and setup notifications
+* User has accessibility options
+* User can change text to multiple different languages
 
 ### 2. Screen Archetypes
 
 * Live Games Screen
    * lists of game times, scores, quarters, and television networks
    * buy ticket icon/button that connects to ticketing website
-   
+   * networks/television link that connects to the network website
+
 * Yesterday Games Screen
    * lists of games and final scores 
    
 * Tomorrow Games Screen
    * lists of game times and television networks
    * buy ticket icon/button that connects to ticketing website
-   
-* Tweets Screen
-   * live tweets of current games being played 
-
-* Favorite Teams Screen
-   * lists of teams where user can check their favorite teams
+   * networks/television link that connects to the network website
    
   
 
@@ -76,20 +65,13 @@ NBA Game Ready is an app that displays all live, upcoming, and the previous day'
 
 **Flow Navigation** (Screen to Screen to Browser)
 
-* Today screen -> <- Yesterday screen -> <- Tomorrow screen -> <- Favorite Teams -> <- Tweets
+* Today screen -> <- Yesterday screen -> <- Tomorrow screen
 * Buy ticket button -> Opens browser to ticketing website
+* Networks/Television link -> Opens browser to Network's website
 
 ## Wireframes
-<img src="wireframes2.jpg" title='Wire Frames' width='' />
 
-## Prototypes
-### First Prototype
-<img src="pt1.jpg" title='Prototype 1' width='' />
-
-### Second Prototype
-<img src="pt2.jpg" title='Prototype 2' width='' />
-
-### Final Prototype
+<img src="wireframe.jpeg" width=400>
 
 
 ## Networking
@@ -111,17 +93,25 @@ MVVM Architecture: Model-View-ViewModel
 
 | Name | Packages |
 | - | :-: |
-| `Kieran` | Backend | 
-| `Raven`  | Backend       |
-| `Yunis`  | Backend |
-| `Claire` | Frontend |
-| `Shikeya` | Frontend |
-| `Sabur` | Backend |
-
-## Video Walkthrough
-
-## Website
- https://nba-game-ready.github.io/nba-game-ready
+| `Kieran` | Recyclerview data & ViewModel | 
+| `Raven`  | ListAdapter       |
+| `Yunis`  | Networking - Games Data |
+| `Claire` | Recyclerview UI |
+| `Shikeya` | Main UI |
+| `Sabur` | Networking - Images |
 
 
+Shikeya - Team Swish.
+Raven test
+
+Claire-Team Swish
+    
+Kieran - Team Swish
+    
+Yunis Khamis
+
+ User_Interface
+Shikeya & Claire
+=======
+RecyclerView branch added
 

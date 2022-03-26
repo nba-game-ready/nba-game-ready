@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/dark_orange"
+    app:contentPadding="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange_shade"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars"/>
+
+        <TextView
+            android:id="@+id/fullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/profileImage"
+            app:layout_constraintTop_toTopOf="@id/profileImage"
+            app:layout_constraintEnd_toStartOf="@id/userName"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="Kieran Windley"
+            android:textStyle="bold"
+            android:textColor="#666666"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/fullName"
+            app:layout_constraintTop_toTopOf="@id/fullName"
+            app:layout_constraintEnd_toStartOf="@id/time"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginLeft="5dp"
+            tools:text="\@kieranshari"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/fullName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userName"
+            tools:text="2h"
+            android:layout_marginLeft="5dp" />
+
+
+        <TextView
+            android:id="@+id/tweet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#666666"
+            app:layout_constraintStart_toStartOf="@id/fullName"
+            app:layout_constraintTop_toBottomOf="@id/fullName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="RT \@nbabasketball: Look at this jumper from Lebron James Wow!!!!" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
