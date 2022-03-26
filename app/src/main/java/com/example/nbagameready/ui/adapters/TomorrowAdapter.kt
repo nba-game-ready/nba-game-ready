@@ -75,12 +75,12 @@ class TomorrowAdapter(private val game: Games) : RecyclerView.Adapter<TomorrowAd
 
         }
         fun fmtDateTime(datetime: String): String? {
-            val inDF: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+            val inDF: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
             inDF.timeZone = TimeZone.getTimeZone("UTC")
 
             val aDate = inDF.parse(datetime)
 
-            val outDF: DateFormat = SimpleDateFormat("hh:mm a")
+            val outDF: DateFormat = SimpleDateFormat("hh:mm a", Locale.getDefault())
             outDF.timeZone = TimeZone.getDefault()
 
             return outDF.format(aDate)
