@@ -29,7 +29,7 @@ class TodayViewModel(application: Application) : AndroidViewModel(application) {
         val c = Calendar.getInstance()
         //Setting the date to the given date
         c.time = sdf.parse(date)
-        c.add(Calendar.DATE, 1)
+        c.add(Calendar.DAY_OF_WEEK, 1)
 
         val newDate = sdf.format(c.time)
         viewModelScope.launch {
