@@ -40,7 +40,7 @@
 					<article id="main">
 						<header>
 							<h2>NBA Game Ready</h2>
-							<p>Displays all live and upcoming NBA games, including live scores and television networks,</br> in a format that's quick and easy to read.</p>
+							<p>Displays all live, upcoming, and previous NBA games. Other features are live and previous scores, in app live twitter </br> feed , and favorite teams saved in a format that's quick and easy to read.</p>
 						<img src="images/ball2.jpg" alt="Wireframe" style="width:10%; height:20%">
 				</header>
 						<section class="wrapper style5">
@@ -56,6 +56,8 @@
 												<li>Networking</li>
 												<li>Architecture</li>
 												<li>Responsibilities</li>
+												<li>Video Walkthrough</li>
+												<li>Website</li>
 											</ol>
 											
 									
@@ -83,11 +85,11 @@
 											<h6>Required Must-have Stories</h6>
 										
 											<ul>
-												<li>User launches app to see a list of all NBA games for the current day.</li>
-												<li>User wants to know which games are televised and what channels those games are on.</li>
-												<li>User clicks on the network of the televised games and is taken to the network website.</li>
-												<li>User sees live updates on scores for each game.</li>
-												<li>User can click on a game and go to website to purchase tickets.</li>
+												<li><b>User launches app to see a list of all NBA games for the current day.</b></li>
+												<li><b>User sees live updates on scores for each game.</b></li>
+												<li><b>User can click on a game and go to website to purchase tickets.</b></li>
+												<li><b>User can add team to their favorites list.</b></li>
+												<li><b>User can click on a game and go to website to purchase tickets.</b></li>
 											</ul>
 											
 											<h6>Optional Nice-to-have Stories</h6>
@@ -95,12 +97,14 @@
 											<ul>
 												<li>User clicks on a game listed and can see team and player stats.</li>
 												<li>User can see if they are close to a stadium in map view.</li>
-												<li>User can search for a team or player and add them to their favorites list.</li>
+												<li>User wants to know which games are televised and what channels those games are on.</li>
+												<li>User clicks on the network of the televised games and is taken to the network website.</li>
 												<li>User can set reminders and notifications for games.</li>
+												<li><b>User can get notified any time their favorite teams are playing.</b></li>
 												<li>User has an option to create an account and profile to have quick access to favorites, saved games, and setup notifications.</li>
 												<li>User has accessibility options.</li>
+												<li>User has accessibility options.</li>
 												<li>User can change text to multiple different languages.</li>
-												<li>Push notifications affiliate marketing.</li>
 											</ul>
 											
 											
@@ -109,9 +113,9 @@
 											<ol>
 												<li>Live Games Screen</li>
 													<ul>
-														<li>Lists of game times, scores, quarters, and television networks</li>
+														<li>Lists of game times, scores, and quarters.</li>
 														<li>Buy ticket icon/button that connects to ticketing website</li>
-														<li>Networks/television link that connects to the network website</li>
+														
 													</ul>
 													   
 												<li>Yesterday Games</li>
@@ -122,9 +126,21 @@
 												
 												<li>Tomorrow Games Screen</li>
 													<ul>
-														<li>Lists of game times and television networks</li>
+														<li>Lists of game times</li>
 														<li>Buy ticket icon/button that connects to ticketing website</li>
-														<li>Networks/television link that connects to the network website</li>
+														
+													</ul>
+												
+												<li>Tweets Screen</li>
+													<ul>
+														<li>live tweets of current games being played</li>
+																												
+													</ul>
+												
+												<li>Favorite Teams Screen</li>
+													<ul>
+														<li>lists of teams where user can check their favorite teams</li>
+																											
 													</ul>
 											</ol>	   
 													   
@@ -132,20 +148,20 @@
 											<h6>Flow Navigation (Screen to Screen to Browser)</h6>
 										
 											<ul>
-												<li>Today screen -> <- Yesterday screen -> <- Tomorrow screen</li>
+												<li>Today screen -> <- Yesterday screen -> <- Tomorrow screen -> <- Favorite Teams -> <- Tweets</li>
 												<li>Buy ticket button -> Opens browser to ticketing website</li>
-												<li>Networks/Television link -> Opens browser to Network's website</li
+												
 											</ul>
 											<hr />
 												
 											<header>
 											<h2>Wireframes</h2>	
-												 <img src="images/wireframes.png" alt="Wireframe" style="width:40%; height:50%">
+												 <img src="images/wireframes.png" alt="Wireframe" style="width:50%; height:60%">
 										<hr />
 												
 											<header>
 											<h2>Network</h2>
-												
+												<h5>Base URL - 	https://api-nba-v1.p.rapidapi.com/</h5>
 												
 												
 												
@@ -209,32 +225,32 @@
 											<tbody>
 												<tr>
 													<td>Kieran</td>
-													<td> Project Manager, Recyclerview Data, and ViewModel</td>
+													<td> Project Manager, Backend</td>
 													
 												</tr>
 												<tr>
 													<td>Yunis</td>
-													<td> Networking and Games Data</td>
+													<td> Backend</td>
 													
 												</tr>
 												<tr>
 													<td>Shikeya</td>
-													<td> User Interface and Github Website</td>
+													<td> Frontend</td>
 													
 												</tr>
 												<tr>
 													<td>Raven</td>
-													<td> List Adapter</td>
+													<td> Backend</td>
 													
 												</tr>
 												<tr>
 													<td>Claire</td>
-													<td> Recyclerview and User Interface</td>
+													<td> Frontend</td>
 													
 												</tr>
 												<tr>
 													<td>Sabur</td>
-													<td> Networking and Images</td>
+													<td> Frontend</td>
 													
 												</tr>
 											</tbody>
@@ -249,20 +265,25 @@
 
 									
 								<section>
-									<h4>First Prototype</h4>
-									<img src="images/firstprototype.png" alt="Wireframe" style="width:70%; height:80%">
+									<h4>First Prototypes</h4>
+									<img src="images/firstprototype.png" alt="first prototypes" style="width:70%; height:80%">
 									<hr/>
 									
-									<h4>Final Prototype</h4>
-									<img src="images/firstprototype.jpg" alt="Wireframe" style="width:70%; height:80%">
+									<h4>Final Prototypes</h4>
+									<img src="images/finalprototypess.png" alt="final prptotypes" style="width:100%; height:110%">
 									<hr/>
 									
 									<h3>NBA Game Ready App</h3>
-								<p>I know, this is not NBA Game Ready app. HaHa it's just a placeholder for now</p>
-								<div style="width:260px;max-width:100%;"><div style="height:0;padding-bottom:210.77%;position:relative;"><iframe width="260" height="548" style="position:absolute;top:0;left:0;width:75%;height:75%;" frameBorder="0" src="https://imgflip.com/embed/5qab80"></iframe></div><p><a href="https://imgflip.com/gif/5qab80"></a></p></div>
-								
-								<hr />
+								<p>Placeholder GIF for now</p>
 									
+																	
+									<div style="width:260px;max-width:100%;"><div style="height:0;padding-bottom:210.77%;position:relative;"><iframe width="260" height="548" 
+								style="position:absolute;top:0;left:0;width:75%;height:75%;" frameBorder="0" src="https://imgflip.com/embed/5qab80"></iframe></div><p>
+								<a href="https://imgflip.com/gif/5qab80"></a></p></div>
+															
+								
+															
+								<hr />
 									
 									
 				
