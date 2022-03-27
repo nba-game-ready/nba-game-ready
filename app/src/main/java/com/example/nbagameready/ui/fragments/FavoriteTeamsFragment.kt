@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.Application
+import com.example.nbagameready.databinding.FragmentFavoriteTeamsBinding
 import com.example.nbagameready.databinding.FragmentTodayBinding
 import com.example.nbagameready.network.nbaapi_teams.Teams
 import com.example.nbagameready.ui.MainActivity
@@ -26,7 +27,7 @@ class FavoriteTeamsFragment : Fragment() {
 
 
 
-    private var _binding: FragmentTodayBinding? = null
+    private var _binding: FragmentFavoriteTeamsBinding? = null
     val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView
     private val viewModel: FavoriteTeamsViewModel by viewModels {
@@ -41,7 +42,7 @@ class FavoriteTeamsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentTodayBinding.inflate(inflater, container, false)
+        _binding = FragmentFavoriteTeamsBinding.inflate(inflater, container, false)
         return binding.root
     }
 

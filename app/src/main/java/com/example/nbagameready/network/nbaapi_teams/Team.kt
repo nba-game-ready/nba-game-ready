@@ -28,5 +28,5 @@ data class Team(
     @ColumnInfo(name = "teamId")
     val teamId: String?,
     @ColumnInfo(name="checked")
-    var checked:Boolean?
+    var checked:Boolean = true
 )

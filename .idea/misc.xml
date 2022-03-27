@@ -5,8 +5,6 @@
       <map>
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/activity_splash.xml" value="0.1" />
-        <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/favorite_teams_list.xml" value="0.11775362318840579" />
-        <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/fragment_favorite_teams.xml" value="0.11775362318840579" />
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/fragment_today.xml" value="0.1" />
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/fragment_tomorrow.xml" value="0.1" />
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/fragment_yesterday.xml" value="0.1" />
@@ -14,6 +12,7 @@
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/todays_list.xml" value="0.25" />
         <entry key="..\:/Users/yunis/Downloads/nba-game-ready/app/src/main/res/layout/tomorrows_list.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bottom_nav_selector.xml" value="0.4222222222222222" />
+        <entry key="app/src/main/res/drawable/favorite_selector.xml" value="0.3" />
         <entry key="app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.25833333333333336" />
@@ -22,7 +21,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20263424518743667" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.23480243161094225" />
         <entry key="app/src/main/res/layout/favorite_teams_list.xml" value="0.4765625" />
-        <entry key="app/src/main/res/layout/fragment_favorite_teams.xml" value="0.4765625" />
+        <entry key="app/src/main/res/layout/fragment_favorite_teams.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_today.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_tomorrow.xml" value="0.2753623188405797" />
         <entry key="app/src/main/res/layout/fragment_twitter.xml" value="0.4973958333333333" />
