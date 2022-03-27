@@ -114,7 +114,7 @@ MVVM Architecture: Model-View-ViewModel
 | `Sabur` | Backend |
 
 ## Video Walkthrough
-<img src="NBA_GameReady2.mp4" width = "600">
+https://github.com/nba-game-ready/nba-game-ready/blob/main/NBA_GameReady2.mp4
 
 ## Website
  https://nba-game-ready.github.io/nba-game-ready
