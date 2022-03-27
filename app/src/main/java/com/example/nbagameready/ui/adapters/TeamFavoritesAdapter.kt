@@ -17,7 +17,6 @@ import com.example.nbagameready.R
 import com.example.nbagameready.network.nbaapi_teams.Team
 import com.example.nbagameready.network.nbaapi_teams.Teams
 import com.example.nbagameready.ui.MainActivity
-import com.example.nbagameready.ui.fragments.FavoriteTeamsFragment
 import com.example.nbagameready.viewmodels.FavoriteTeamsViewModel
 
 
@@ -43,7 +42,7 @@ class TeamFavoritesAdapter(team: Teams, private val viewModel: FavoriteTeamsView
 
         private val homeTeamImage: ImageView = itemView.findViewById(R.id.home_team_image)
         private val homeTeamName: TextView = itemView.findViewById(R.id.home_team)
-        private val favoriteButton: ImageButton = itemView.findViewById(R.id.imageButton)
+        private val favoriteButton: CheckBox = itemView.findViewById(R.id.checkBox)
 
 
         fun bindView() {
@@ -54,7 +53,6 @@ class TeamFavoritesAdapter(team: Teams, private val viewModel: FavoriteTeamsView
                 .into(homeTeamImage)
 
 
-
             val teamId = todayFilter?.get(bindingAdapterPosition)?.teamId?.toInt()
             val teamFavorited = if (teamId != null) {
                 viewModel.teamExists(teamId)
@@ -62,12 +60,12 @@ class TeamFavoritesAdapter(team: Teams, private val viewModel: FavoriteTeamsView
 
             // Check the team's box if the ID is in database
             if (teamFavorited) {
-                favoriteButton.isSelected = true
+                favoriteButton.isChecked = true
             }
 
             favoriteButton.setOnClickListener {
 
-                if (!favoriteButton.isSelected) {
+                if (!favoriteButton.isChecked) {
 
                     todayFilter?.get(bindingAdapterPosition)
                         ?.let { it1 -> it1.teamId?.let { it2 -> viewModel.deleteTeam(it2.toInt()) } }
@@ -77,7 +75,7 @@ class TeamFavoritesAdapter(team: Teams, private val viewModel: FavoriteTeamsView
                         Toast.LENGTH_SHORT
                     ).show()
 
-                    Log.i("Yunis",favoriteButton.isSelected.toString())
+                    Log.i("Yunis",favoriteButton.isChecked.toString())
 
                 }
 

@@ -8,11 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.Application
 import com.example.nbagameready.databinding.FragmentTodayBinding
 import com.example.nbagameready.network.nbaapi_teams.Teams
+import com.example.nbagameready.ui.MainActivity
 import com.example.nbagameready.ui.adapters.TeamFavoritesAdapter
 import com.example.nbagameready.ui.adapters.TodayAdapter
 import com.example.nbagameready.viewmodels.FavoriteTeamsViewModel
@@ -31,6 +33,7 @@ class FavoriteTeamsFragment : Fragment() {
         FavoriteTeamsViewModel.MainViewModelFactory((activity?.application as Application).database.favoriteTeamDao(),
             activity!!.application)
     }
+    private lateinit var viewModel2: FavoriteTeamsViewModel
 
 
     override fun onCreateView(
@@ -45,6 +48,8 @@ class FavoriteTeamsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.recyclerview
+
+
 
         getNBATeamsResponse()
 
@@ -74,7 +79,8 @@ class FavoriteTeamsFragment : Fragment() {
 
                         recyclerView.apply {
                             recyclerView.layoutManager = GridLayoutManager(context, 3)
-                            adapter = response.body()?.let { TeamFavoritesAdapter(it, viewModel) }
+                            viewModel2 = ViewModelProvider(this@FavoriteTeamsFragment)[FavoriteTeamsViewModel::class.java]
+                            adapter = response.body()?.let { TeamFavoritesAdapter(it, viewModel2) }
                             recyclerView.adapter = adapter
                         }
 

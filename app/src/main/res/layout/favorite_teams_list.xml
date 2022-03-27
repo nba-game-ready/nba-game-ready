@@ -49,17 +49,16 @@
             app:layout_constraintBottom_toTopOf="@+id/home_team_image"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
+        <CheckBox
+            android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="CheckBox"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_team_image"
-            app:srcCompat="@android:drawable/btn_star_big_off"
-            android:background="@color/orange_shade"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/home_team_image" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
