@@ -31,7 +31,16 @@ class TwitterAdapter (private val tweets: Tweets) :
     override fun getItemCount(): Int {
         return tweets.data?.size
     }
-
+    // Clean all elements of the recycler
+    fun clear() {
+        tweets.data.toMutableList().clear()
+        notifyDataSetChanged()
+    }
+    // Add a list of items -- change to type used
+    fun addAll(tweetList: Tweets) {
+        tweets.data.toMutableList().addAll(tweetList.data)
+        notifyDataSetChanged()
+    }
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val userTweet: TextView = itemView.findViewById(R.id.tweet)
         val userName: TextView = itemView.findViewById(R.id.userName)
