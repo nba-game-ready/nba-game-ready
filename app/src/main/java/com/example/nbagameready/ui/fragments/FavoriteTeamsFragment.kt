@@ -21,9 +21,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class FavoriteTeamsFragment : Fragment() {
-    /***
-     * Today Fragment to showcase the games that are airing today
-     */
+
 
 
     private var _binding: FragmentTodayBinding? = null
@@ -76,14 +74,14 @@ class FavoriteTeamsFragment : Fragment() {
 
                         recyclerView.apply {
                             recyclerView.layoutManager = GridLayoutManager(context, 3)
-                            adapter = response.body()?.let { TeamFavoritesAdapter(it) }
+                            adapter = response.body()?.let { TeamFavoritesAdapter(it, viewModel) }
                             recyclerView.adapter = adapter
                         }
 
                     } else {
                         Log.e(
                             "FavoriteTeamsFragment",
-                            "Failed to get games${response.errorBody()?.string() ?: ""}"
+                            "Failed to get teams${response.errorBody()?.string() ?: ""}"
                         )
                     }
                 }

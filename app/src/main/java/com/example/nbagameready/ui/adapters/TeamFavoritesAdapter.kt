@@ -10,17 +10,20 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.get
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nbagameready.R
 import com.example.nbagameready.network.nbaapi_teams.Team
 import com.example.nbagameready.network.nbaapi_teams.Teams
 import com.example.nbagameready.ui.MainActivity
+import com.example.nbagameready.ui.fragments.FavoriteTeamsFragment
 import com.example.nbagameready.viewmodels.FavoriteTeamsViewModel
 
-private lateinit var viewModel: FavoriteTeamsViewModel
 
-class TeamFavoritesAdapter(team: Teams) : RecyclerView.Adapter<TeamFavoritesAdapter.ViewHolder>()
+
+
+class TeamFavoritesAdapter(team: Teams, private val viewModel: FavoriteTeamsViewModel) : RecyclerView.Adapter<TeamFavoritesAdapter.ViewHolder>()
 
 {
     private var todayList: List<Team>? = team.api?.teams?.filter { it.nbaFranchise == "1" && it.allStar == "0"}
@@ -50,7 +53,7 @@ class TeamFavoritesAdapter(team: Teams) : RecyclerView.Adapter<TeamFavoritesAdap
             Glide.with(itemView.context).load(todayFilter?.get(bindingAdapterPosition)?.logo)
                 .into(homeTeamImage)
 
-            viewModel = ViewModelProvider(itemView.context).get(FavoriteTeamsViewModel::class.java)
+
 
             val teamId = todayFilter?.get(bindingAdapterPosition)?.teamId?.toInt()
             val teamFavorited = if (teamId != null) {

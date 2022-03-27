@@ -61,6 +61,7 @@ class FavoriteTeamsViewModel(application: Application, private val favoriteDao: 
         }
     }
 
+
     class MainViewModelFactory(
         private val favoriteDao: FavoriteTeamDao,
         private val application: Application
