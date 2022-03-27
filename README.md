@@ -31,7 +31,6 @@ NBA Game Ready is an app that displays all live, upcoming, and the previous day'
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-
 - [X] User launches app to see a list of all NBA games for the current day
 - [X] User sees live updates on scores for each game
 - [X] User can click on a game and go to website to purchase tickets
@@ -39,16 +38,6 @@ NBA Game Ready is an app that displays all live, upcoming, and the previous day'
 - [X] User can see most recent tweets about current live games
 
 **Optional Nice-to-have Stories**
-
-
-* User clicks on a game listed and can see team and player stats
-* User can see if they are close to a stadium in map view
-* User can search for a team or player and add them to their favorites list
-* User can set reminders and notifications for games
-* User has an option to create an account and profile to have quick access to favorites, saved games, and setup notifications
-* User has accessibility options
-* User can change text to multiple different languages
-=======
 - [ ] User clicks on a game listed and can see team and player stats
 - [ ] User can see if they are close to a stadium in map view
 - [ ] User wants to know which games are televised and what channels those games are on
@@ -92,15 +81,11 @@ NBA Game Ready is an app that displays all live, upcoming, and the previous day'
 ## Wireframes
 <img src="wireframes2.jpg" title='Wire Frames' width='' />
 
-## Prototypes
 ### First Prototype
-<img src="pt1.jpg" title='Prototype 1' width='' />
-
-### Second Prototype
-<img src="pt2.jpg" title='Prototype 2' width='' />
+<img src="firstprototype.png" title='Prototype 1' width='' />
 
 ### Final Prototype
-
+<img src="completedprototypes.png" title='Final Prototype' width='' />
 
 ## Networking
 
@@ -115,7 +100,7 @@ NBA Game Ready is an app that displays all live, upcoming, and the previous day'
     
 ## Architecture
 MVVM Architecture: Model-View-ViewModel
-<img src="MVVM3.png" height=400>
+<img src="architecture.png" height=400>
 
 ## Responsibilities
 
@@ -129,16 +114,9 @@ MVVM Architecture: Model-View-ViewModel
 | `Sabur` | Backend |
 
 ## Video Walkthrough
+<img src="nbagameready3.gif" width='' />
 
 ## Website
  https://nba-game-ready.github.io/nba-game-ready
-
-
-
- User_Interface
-Shikeya & Claire
-=======
-RecyclerView branch added
-=======
 
 
