@@ -56,6 +56,7 @@
             android:layout_height="24dp"
             android:button="@drawable/favorite_selector"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:buttonTint="@color/orange"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
