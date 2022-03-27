@@ -1,5 +1,6 @@
 package com.example.nbagameready.ui.adapters
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater

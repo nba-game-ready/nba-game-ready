@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">NBA Game Ready</string>
     <string name="tweet">Tweet</string>
     <string name="get_your_alerts_here">Get your alerts here!</string>
     <string name="tomorrow">Tomorrow</string>
@@ -10,5 +10,6 @@
     <string name="alerts_here">alerts here!</string>
     <string name="get_your">Get your</string>
     <string name="home_team">home_team</string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
