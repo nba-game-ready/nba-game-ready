@@ -34,7 +34,7 @@ class TomorrowViewModel(application: Application) : AndroidViewModel(application
         //Setting the date to the given date
         c.time = sdf.parse(date)
 
-        c.add(Calendar.DAY_OF_WEEK, 2)
+        c.add(Calendar.DATE, 2)
         val newDate = sdf.format(c.time)
         viewModelScope.launch {
             _apiResponse.value = NbaApi.retrofitService.getGames(newDate, key)
