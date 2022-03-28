@@ -1,19 +1,26 @@
 package com.example.nbagameready.ui.fragments
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.getSystemService
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbagameready.Application
+import com.example.nbagameready.R
 import com.example.nbagameready.databinding.FragmentFavoriteTeamsBinding
 import com.example.nbagameready.databinding.FragmentTodayBinding
+import com.example.nbagameready.network.nbaapi_teams.Team
 import com.example.nbagameready.network.nbaapi_teams.Teams
 import com.example.nbagameready.ui.MainActivity
 import com.example.nbagameready.ui.adapters.TeamFavoritesAdapter
@@ -43,6 +50,11 @@ class FavoriteTeamsFragment : Fragment() {
     ): View? {
 
         _binding = FragmentFavoriteTeamsBinding.inflate(inflater, container, false)
+
+        createChannel(
+            getString(R.string.team_notifications_id),
+            getString(R.string.team_notifications_name)
+        )
         return binding.root
     }
 
@@ -95,4 +107,31 @@ class FavoriteTeamsFragment : Fragment() {
             })
         }
     }
+
+    private fun createChannel(channelId: String, channelName: String) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val notificationChannel = NotificationChannel(
+                channelId,
+                channelName,
+                NotificationManager.IMPORTANCE_HIGH
+            ).apply {
+                setShowBadge(false)
+            }
+            notificationChannel.enableLights(true)
+            notificationChannel.lightColor = Color.YELLOW
+            notificationChannel.enableVibration(true)
+            notificationChannel.description = getString(R.string.message_subscribe)
+
+            val notificationManager = requireActivity().getSystemService(
+                NotificationManager::class.java
+            )
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+//    private fun favoriteTeamsNotification() {
+//        viewModel.apiResponse.observe(this) {
+//            it.clone().enqueue(object : Callback<Teams>)
+//
+//    }
 }

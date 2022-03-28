@@ -13,6 +13,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="team_playing_alert">Your favorite teams is playing today!</string>
     <string name="team_notifications_id">team_id</string>
+    <string name="team_notifications_name">Team Alerts</string>
     <string name="message_subscribe">You will now receive alerts when this team plays</string>
     <string name="notification_title">Favorite Teams Alert</string>
     <string name="snooze">Snooze</string>

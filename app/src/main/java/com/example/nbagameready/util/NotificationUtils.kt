@@ -33,13 +33,13 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .bigPicture(ballImage)
         .bigLargeIcon(null)
 
-    val snoozeIntent = Intent(applicationContext, SnoozeReceiver::class.java)
-    val snoozePendingIntent: PendingIntent = PendingIntent.getBroadcast(
-        applicationContext,
-        REQUEST_CODE,
-        snoozeIntent,
-        FLAGS
-    )
+//    val snoozeIntent = Intent(applicationContext, SnoozeReceiver::class.java)
+//    val snoozePendingIntent: PendingIntent = PendingIntent.getBroadcast(
+//        applicationContext,
+//        REQUEST_CODE,
+//        snoozeIntent,
+//        FLAGS
+//    )
     val builder = NotificationCompat.Builder(
         applicationContext,
         applicationContext.getString(R.string.team_notifications_id)
@@ -51,11 +51,11 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .setContentIntent(contentPendingIntent)
         .setAutoCancel(true)
         .setLargeIcon(ballImage)
-        .addAction(
-            R.drawable.ball2,
-            applicationContext.getString(R.string.snooze),
-            snoozePendingIntent
-        )
+//        .addAction(
+//            R.drawable.ball2,
+//            applicationContext.getString(R.string.snooze),
+//            snoozePendingIntent
+//        )
         .setPriority(NotificationCompat.PRIORITY_HIGH)
     notify(NOTIFICATION_ID, builder.build())
 

@@ -25,6 +25,12 @@
 
 
         </activity>
+        <receiver
+            android:name=".receivers.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false">
+        </receiver>
+
         <meta-data
             android:name = "keyValue"
             android:value = "${KEY}"/>
