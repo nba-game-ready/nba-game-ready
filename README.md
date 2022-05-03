@@ -95,7 +95,7 @@ NBA Game Ready is an app that displays all live, upcoming, and the previous day'
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
     `GET`    | /games/live/ | get all available games in play
-    `GET`    | /games/date/{Enter Date} | get all games by a specific date
+    `GET`    | /games/date/{Enter Date}/ | get all games by a specific date
     `GET`    | /teams/league/standard/ | get all NBA teams in the standard league
     
     
